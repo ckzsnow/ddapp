@@ -51,7 +51,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
                 views: {
                     'menuContent': {
                         templateUrl: "templates/home_chosen.html",
-                        controller: 'homeCtrl'
+                        controller: 'homeChosenCtrl'
                     }
                 }
             })
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
                 views: {
                     'menuContent': {
                         templateUrl: "templates/home_latest.html",
-                        controller: 'homeCtrl'
+                        controller: 'homeLatestCtrl'
                     }
                 }
             })
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
                 views: {
                     'menuContent': {
                         templateUrl: "templates/home_recommend.html",
-                        controller: 'homeCtrl'
+                        controller: 'homeRecommendCtrl'
                     }
                 }
             }).state('app.login', {

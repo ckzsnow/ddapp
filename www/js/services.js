@@ -17,7 +17,7 @@ angular.module('starter.services', [])
           template: data
         });
         alertPopup.then(function(res) {
-          callback();
+          if(callback) callback();
           console.log('Thank you for not eating my delicious ice cream cone');
         });
       },

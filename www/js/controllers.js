@@ -5,31 +5,52 @@ angular.module('starter.controllers', [])
   /*
    首页---homeCtrl
    */
-  .controller('homeCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course,$timeout) {
+  .controller('homeChosenCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
     $ionicSlideBoxDelegate.update();
     $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     $scope.refreshChosenCourse = function() {
     	$rootScope.pageChosen = 1;
     	$course.getMoreChosenCourse($scope, 'refresh');
     }
+    $scope.loadMoreChosenCourse = function () {
+    	$course.getMoreChosenCourse($scope, 'scroll');
+    }
+    $scope.refreshChosenCourse();
+  })
+  .controller('homeLatestCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
+    $ionicSlideBoxDelegate.update();
+    $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     $scope.refreshLatestCourse = function() {
     	$rootScope.pageLatest = 1;
     	$course.getMoreLatestCourse($scope, 'refresh');
     }
-    $scope.refreshRecommendCourse = function() {
-    	$rootScope.pageRecommend = 1;
-    	$course.getMoreRecommendCourse($scope, 'refresh');
-    }
-    $scope.loadMoreChosenCourse = function () {
-    	$course.getMoreChosenCourse($scope, 'scroll');
-    }
     $scope.loadMoreLatestCourse = function () {
     	$course.getMoreLatestCourse($scope, 'scroll');
     }
-    $scope.loadMoreRecommendCourse = function () {
-    	$course.getMoreRecommendCourse($scope, 'scroll');
+    $scope.refreshLatestCourse();
+  })
+  .controller('homeRecommendCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
+    $ionicSlideBoxDelegate.update();
+    $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
+    $scope.hasLogin = false;
+    if(itzhao.check.isEmpty(itzhao.userInfo.userId)) {
+    	itzhao.alertTip("您还没有登陆，无法获取推荐课程信息！");
+    } else {
+    	$scope.hasLogin = true;
+    	$scope.refreshRecommendCourse();
     }
-    $scope.refreshChosenCourse();
+    $scope.refreshRecommendCourse = function() {
+    	if($scope.hasLogin) {
+	    	$rootScope.pageRecommend = 1;
+	    	$course.getMoreRecommendCourse($scope, 'refresh');
+    	} else {
+    		$scope.$broadcast('scroll.refreshComplete');
+    		itzhao.alertTip("您还没有登陆，无法获取推荐课程信息！");
+    	}
+    }
+    $scope.loadMoreRecommendCourse = function () {
+    	if($scope.hasLogin) $course.getMoreRecommendCourse($scope, 'scroll');
+    }
   })
   .controller('loginCtrl', function ($rootScope, $scope, itzhao, $LocalStorage) {
     $scope.loginData = {};
