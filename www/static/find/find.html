@@ -1,0 +1,43 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">发现</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header has-tabs">
+    <div class="home-title">
+      <span class="active">行业大类</span>
+      <span ui-sref="app.findField">细分</span>
+    </div>
+    <div class="top">
+      <div style="margin: auto;width: 320px;">
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">咨询</p>
+          <div class="choose">
+            <i class="button-icon icon ion-checkmark-round"></i>
+          </div>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">财务</p>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">知识</p>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">游戏</p>
+        </div>
+      </div>
+    </div>
+    <section class="personage-col-2 top" ng-click="seachCourse()">
+      <p style="text-align: center;color:#F50208">下一页</p>
+    </section>
+  </ion-content>
+</ion-view>

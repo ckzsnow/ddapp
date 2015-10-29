@@ -1,0 +1,160 @@
+{
+  "app.person": {
+    "url": "/person",
+    "cache":"false",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/personage.html",
+        "controller":"personAgeCtrl"
+      }
+    }
+  },
+  "app.find": {
+    "url": "/find",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/find/find.html"
+      }
+    }
+  },
+  "app.setting": {
+    "url": "/setting",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/setting.html"
+      }
+    }
+  },
+  "app.setPhone": {
+    "url": "/setphone",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/setphone.html"
+      }
+    }
+  },
+  "app.setPWD": {
+    "url": "/setpwd",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/setpwd.html",
+        "controller":"setPwdCtrl"
+      }
+    }
+  },
+  "app.personEntry": {
+    "url": "/personentry",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/personentry.html",
+        "controller":"visitCardSetCtrl"
+      }
+    }
+  },
+  "app.personEntry2": {
+    "url": "/personentry2",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/personentry-2.html",
+        "controller":"addCourseCtrl"
+      }
+    }
+  },
+  "app.personEntry3": {
+    "url": "/personentry3",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/personentry-3.html",
+        "controller":"resumeCtrl"
+      }
+    }
+  },
+  "app.myorder": {
+    "url": "/myorder",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myorder.html"
+      }
+    }
+  },
+  "app.myopen": {
+    "url": "/myopen",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myopen.html"
+      }
+    }
+  },
+  "app.comQuestion": {
+    "url": "/comquestion",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/comquestion.html"
+      }
+    }
+  },
+  "app.myinfo": {
+    "url": "/myinfo",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myinfo.html",
+        "cache":"false",
+        "controller":"myInfoCtrl"
+      }
+    }
+  },
+  "app.myinfoset": {
+    "url": "/myinfoset",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myinfoset.html",
+        "controller":"myInfoSetCtrl"
+      }
+    }
+  },
+  "app.register": {
+    "url": "/register",
+    "views": {
+      "menuContent": {
+        "templateUrl": "templates/register.html",
+        "controller": "registerCtrl"
+      }
+    }
+  },
+  "app.banner": {
+    "url": "/banner",
+    "views": {
+      "menuContent": {
+        "templateUrl": "templates/banner.html",
+        "controller": "bannerCtrl"
+      }
+    }
+  },
+  "app.courseInfo": {
+    "url": "/courseInfo",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/course/courseinfo.html",
+        "controller": "courseInfoCtrl"
+      }
+    }
+  },
+  "app.courseLast": {
+    "url": "/courseLast",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/course/course-new.html",
+        "controller": "courseLastCtrl"
+      }
+    }
+  },
+  "app.findField": {
+    "url": "/findField",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/find/find-field.html",
+        "controller": "findFieldCtrl"
+      }
+    }
+  }
+}

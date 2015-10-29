@@ -1,0 +1,63 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">课程详情</h1>
+    <a href="#/app/banner" class="button button-icon icon ion-person"></a>
+  </div>
+  <div ng-click="preSlide()">上一站</div>
+  <div ng-click="nextSlide()">上一下</div>
+  <ion-content class="has-header has-tabs" style="background-color: #FAFAFA;">
+    <div class="slide">
+      <ion-slide-box  does-continue="true"  delegate-handle="image-course" show-pager="false"
+                      on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+      </ion-slide-box>
+      <div class="bar-button" ng-click="preSlide()" style="left: 10px"><i class="button-icon icon ion-chevron-left"></i></div>
+
+      <div class="bar-button" ng-click="nextSlide()" style="right: 10px"><i class="button-icon icon ion-chevron-right"></i></div>
+      <div class="bar-bottom"><p>{{currentIndex}}/4</p></div>
+    </div>
+      <ion-scroll  delegate-handle="talk" style="height: 500px;">
+        <div style="padding-bottom: 200px" compent="talk-unit">
+            <div class="talk-col">
+              <img src="img/person.jpg"/>
+              <div class="talk-right"><img src="img/left.png" alt=""/> <p>今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！
+                今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！
+                今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！今天天气怎么样！</p></div>
+            </div>
+            <div class="talk-col">
+              <img src="img/person.jpg"/>
+              <div class="talk-right"><img src="img/left.png" alt=""/> <p>应该还可以</p></div>
+            </div>
+          <div class="talk-col">
+            <div class="talk-left"><img src="img/right.png" alt=""/> <p>应该还可以</p></div>
+            <img src="img/person.jpg"/>
+          </div>
+          <div class="talk-col">
+            <div class="talk-left"><img src="img/right.png" alt=""/> <p>应该还可以</p></div>
+            <img src="img/person.jpg"/>
+          </div>
+          <div class="talk-col">
+            <div class="talk-left"><img src="img/right.png" alt=""/> <p>应该还可以</p></div>
+            <img src="img/person.jpg"/>
+          </div>
+        </div>
+      </ion-scroll>
+  </ion-content>
+  <div class="bar bar-footer talk-input">
+      <input ng-model="sendData" type="text" placeholder="请输入聊天内容"/>
+      <a class="button-icon pull-right" ng-click="sendMessage()">发送</a>
+      <a class="button-icon ion-arrow-up-a pull-right" ng-click="scrollTalkToTop()"></a>
+  </div>
+</ion-view>

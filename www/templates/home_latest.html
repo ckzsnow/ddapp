@@ -1,0 +1,65 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">点豆成兵</h1>
+  </div>
+  <ion-content class="has-header has-tabs contain">
+    <div class="home-title">
+      <span ui-sref="app.home_chosen">精选</span>
+      <span class="active">最新</span>
+      <span ui-sref="app.home_recommend">推荐</span>
+    </div>
+    <div class="slide">
+      <ion-slide-box  does-continue="true" slide-interval="2000" show-pager="true"  delegate-handle="image-viewer" auto-play="true"
+                     on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <ion-refresher pulling-text="下拉获取最新课程" refreshing-text="正在获取课程信息!" on-refresh="refreshLatestCourse()"></ion-refresher>
+    <div class="list">
+      <div class="item" ng-repeat="col in latestCourse" ng-click="clickCourse({{col.courseInfo.id}})">
+        <div class="home-col-1">
+          <h3>{{col.courseInfo.name}}</h3>
+        </div>
+        <div class="home-col-2">
+          <span>{{col.courseInfo.industryName}}/{{col.courseInfo.fieldName}}/{{col.courseInfo.stageName}}/</span>
+        </div>
+        <div class="home-col-3">
+          <p>{{col.courseInfo.brief}}</p>
+        </div>
+        <div class="home-col-4">
+          <img ng-src="http://139.196.23.131:7070/ddcb{{col.userInfo.userPhoto}}"/>
+          <span class="mid">{{col.userInfo.nickName}}</span>
+          <span class="small">{{col.userInfo.companyName}}丨{{col.userInfo.companyPosition}}</span>
+        </div>
+        <div class="home-col-5">
+          <div>
+            <span class="icon ion-android-time my-icon"></span>{{col.courseInfo.formatSchoolTime}}
+          </div>
+          <div>
+            <span class="icon ion-ios-heart"></span>
+            <span>{{col.courseInfo.praiseAmount}}</span>
+            <span class="icon ion-ios-person left"></span>
+            <span>{{col.courseInfo.enterAmount}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll
+      ng-if="latestScrollLoadMore"
+      on-infinite="loadMoreLatestCourse()"
+      distance="1%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

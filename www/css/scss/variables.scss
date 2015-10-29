@@ -1,0 +1,46 @@
+$footer-hight:60px;
+
+//全局font
+$font-size: (top: 22px, tip: 15px,input:20px,button:22px,list-top:20px,list:14px);
+//全局文字颜色
+$color:(back:#333333,back1:#888888,tip:#9B9B9B,nomal:#656565,foot-check:#538FFD,head:#63B3F0,color-1:#9A9A9A,icon:#C1C1C1,border:#C0C0C0);
+//全局背景色
+$bgc:(article:#F1F1F1,head:#16428D,section:#FFFFFF,bar:#5EC47B,input:#fff,button:#63B3F0,footer:#333333);
+
+$padding-top: (big:105px , mid: 50px);
+
+@mixin common-font{
+ font: 16px Apple LiGothic Medium ,Microsoft YaHei, SimSun, Arial, Helvetica,
+ sans-serif;
+}
+//@mixin XXXX声明的css样式变量只能通过 @include XXXX;
+@mixin center-block {
+  margin-left:auto;
+  margin-right:auto;
+}
+//我常用的一套弹性布局
+@mixin flex{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex-son($fg: 1){
+  -webkit-box-flex: $fg;
+  -webkit-flex: $fg;
+  -moz-box-flex: $fg;
+  -moz-flex: $fg;
+  -ms-flex: $fg;
+  flex: $fg;
+}
+
+@mixin list-border-button{
+  border-bottom: 1px solid #fff;
+}
+@mixin list-border-left{
+  border-left: 1px solid #fff;
+}
+.hide{
+  display: block;
+}

@@ -1,0 +1,82 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">申请公开课</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header contain">
+   <article>
+     <div class="personage-col-3 top">
+       <section class="personage-col-2">
+         <p>真实姓名</p>
+         <div class="info-top">
+           <input ng-model="userInfoUp.name" type="text" placeholder="请输入姓名"/>
+           <a class="button button-icon icon ion-ios-arrow-right" style="margin-top: -12px"></a>
+         </div>
+       </section>
+       <section class="personage-col-2">
+         <p>性别</p>
+         <span ng-if="!userInfoUp.sex">请选择您的性别</span>
+         <label class="item-input item-select">
+           <select ng-model="userInfoUp.sex" ng-options="a.id as a.name for a in sex">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>行业</p>
+         <span ng-if="!userInfoUp.industry_id">请选择您从事的行业</span>
+         <label class="item-input item-select">
+           <select ng-model="userInfoUp.industry_id" ng-options="a.id as a.name for a in industry">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>任职机构</p>
+         <div class="info-top">
+           <input ng-model="userInfoUp.company" type="text" placeholder="您目前的公司是"/>
+           <a class="button button-icon icon ion-ios-arrow-right" style="margin-top: -12px"></a>
+         </div>
+       </section>
+       <section class="personage-col-2">
+         <p>职位</p>
+         <div class="info-top">
+           <input ng-model="userInfoUp.position" type="text" placeholder="您目前的职位是"/>
+           <a class="button button-icon icon ion-ios-arrow-right" style="margin-top: -12px"></a>
+         </div>
+       </section>
+       <section class="personage-col-2">
+         <p>工作年限</p>
+         <span ng-if="!userInfoUp.work_year_id">请选择您的工作年限</span>
+         <label class="item-input item-select">
+           <select ng-model="userInfoUp.work_year_id" ng-options="a.id as a.name for a in year">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>所在城市</p>
+         <span ng-if="!userInfoUp.province_id">请选择所在城市</span>
+         <label class="item-input item-select">
+           <select ng-model="userInfoUp.province_id" ng-options="a.provinceId as a.province for a in province">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>名片认证
+           <i class="icon ion-image my-icon"></i>
+         </p>
+         <div class="personage-col-but">
+           <span>上传</span>
+         </div>
+       </section>
+     </div>
+     <p class="button-tips"><i class="icon ion-android-warning"></i>此页信息全为必填项</p>
+     <section class="personage-col-2 top" ui-sref="app.personEntry2">
+       <p style="text-align: center;color:#F50208">下一页</p>
+     </section>
+   </article>
+  </ion-content>
+</ion-view>

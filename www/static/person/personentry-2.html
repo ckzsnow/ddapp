@@ -1,0 +1,58 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">申请开课</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header contain">
+   <article>
+     <div class="personage-col-3 top">
+       <section class="personage-col-2">
+         <input type="text" ng-model="addCourseData.name" placeholder="请输入课程名称(最多15字)"/>
+       </section>
+       <section class="personage-col-2">
+         <input type="text" ng-model="addCourseData.brief" placeholder="请输入课程介绍(最多50字)"/>
+       </section>
+       <section class="personage-col-2">
+         <input type="text" ng-model="addCourseData.details" placeholder="课程详情(设置课程背景、受欢迎群体、知识要点)"/>
+       </section>
+       <section class="personage-col-2">
+         <p>课程所属行业大类</p>
+         <label class="item-input item-select">
+          <select ng-model="addCourseData.industry_id" ng-options="a.id as a.name for a in industry" ng-change="getField()">
+          </select>
+         <i class="button-icon icon ion-ios-arrow-right"></i>
+       </label>
+       </section>
+       <section class="personage-col-2">
+         <p>课程所属行业细分</p>
+         <label class="item-input item-select">
+           <select ng-model="addCourseData.field_id" ng-options="a.id as a.name for a in industry">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>课程所属方向</p>
+         <label class="item-input item-select">
+           <select ng-model="addCourseData.stage_id" ng-options="a.id as a.name for a in industry">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+       <section class="personage-col-2">
+         <p>开课时间</p>
+         <label class="item-input item-select">
+           <select ng-model="addCourseData.school_time" ng-options="a.id as a.name for a in industry">
+           </select>
+           <i class="button-icon icon ion-ios-arrow-right"></i>
+         </label>
+       </section>
+     </div>
+     <p class="button-tips"><i class="icon ion-android-warning"></i>此页信息全为必填项</p>
+     <section class="personage-col-2 top" ui-sref="app.personEntry3" ng-click="addCourse()">
+       <p style="text-align: center;color:#F50208">下一页</p>
+     </section>
+   </article>
+  </ion-content>
+</ion-view>

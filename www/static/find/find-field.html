@@ -1,0 +1,64 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">发现</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header has-tabs">
+    <div class="home-title">
+      <span ui-sref="app.find">行业大类</span>
+      <span class="active">细分</span>
+    </div>
+    <div class="top">
+      <div style="margin: auto;width: 320px;">
+        <div class="industry-col" ng-click="openModal()">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title" ng-show="!testChooseArr.length">咨询</p>
+          <div class="choose-detail" ng-show="testChooseArr.length">
+                <p style="">咨询</p>
+                <!--<i class="button-icon icon ion-checkmark-round"></i>-->
+                <li ng-repeat="i in testChooseArr">{{i}}</li>
+          </div>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">财务</p>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">知识</p>
+        </div>
+        <div class="industry-col">
+          <div class="mask"></div>
+          <img src="img/person.jpg" alt=""/>
+          <p class="title">游戏</p>
+        </div>
+      </div>
+      <p>提示：点击第一个看效果</p>
+    </div>
+    <section class="personage-col-2 top" ng-click="seachCourse()">
+      <p style="text-align: center;color:#F50208">下一页</p>
+    </section>
+  </ion-content>
+</ion-view>
+<script id="find-detail.html" type="text/ng-template">
+  <div class="modal">
+    <ion-header-bar>
+      <h1 class="title">请选择行业</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="list">
+        <ion-checkbox ng-repeat="item in testdata"
+                      ng-model="item.checked"
+                      ng-checked="item.checked">
+          {{ item.text }}
+        </ion-checkbox>
+      </div>
+      <button class="button button-full button-energized" ng-click="changeCustomerInfo()">确定</button>
+      <button class="button button-full button-energized" ng-click="closeModal()">取消</button>
+    </ion-content>
+  </div>
+</script>

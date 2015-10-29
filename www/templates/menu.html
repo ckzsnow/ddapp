@@ -1,0 +1,17 @@
+<ion-nav-view name="menuContent">
+</ion-nav-view>
+<div class="bar bar-footer footer hide"
+     ng-class="{show: $state.includes('app.home_chosen') || $state.includes('app.home_latest') || $state.includes('app.home_recommend') ||$state.includes('app.find')||$state.includes('app.person')}">
+  <a ng-class="{active: $state.includes('app.home_chosen') || $state.includes('app.home_latest') || $state.includes('app.home_recommend')}" href="#/app/home">
+    <div class="icon ion-ios-bookmarks-outline" style="font-size: 25px"></div>
+    <p>公开课</p>
+  </a>
+  <a ng-class="{active: $state.includes('app.find')}" href="#/app/find">
+    <div class="icon ion-ios-navigate-outline" style="font-size: 25px"></div>
+    <p>发现</p>
+  </a>
+  <a ng-class="{active: $state.includes('app.person')}" href="#/app/person">
+    <div class="icon ion-android-person" style="font-size: 25px"></div>
+    <p>个人中心</p>
+  </a>
+</div>

@@ -1,0 +1,89 @@
+/*
+Error: Undefined mixin 'box-sizing'.
+        on line 10 of _scaffolding.scss, in `box-sizing'
+        from line 10 of _scaffolding.scss
+        from line 10 of ionic.scss
+
+5: 
+6:   // Variables "mixins",
+7: "variables",
+8: 
+9:   // Base "reset",
+10: "scaffolding",
+11: "type",
+12: 
+13:   // Components "action-sheet",
+14: "backdrop",
+15: "bar",
+
+Backtrace:
+_scaffolding.scss:10:in `box-sizing'
+_scaffolding.scss:10
+ionic.scss:10
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:348:in `block in visit_mixin'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `block in with_mixin'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:98:in `with_mixin'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:346:in `visit_mixin'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `map'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:325:in `map'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:88:in `block in with_import'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:88:in `with_import'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `block in with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:115:in `with_frame'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/stack.rb:79:in `with_base'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:158:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `map'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/base.rb:36:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:157:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/visitors/perform.rb:8:in `visit'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:36:in `css_tree'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/engine.rb:295:in `render_with_sourcemap'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `each'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/plugin.rb:82:in `update_stylesheets'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/sass_scss.rb:51:in `process_result'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/base.rb:52:in `parse'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/lib/sass/exec/base.rb:19:in `parse!'
+D:/Program Files/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.16/bin/scss:13:in `<top (required)>'
+D:/Program Files/Ruby21/bin/scss:23:in `load'
+D:/Program Files/Ruby21/bin/scss:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined mixin 'box-sizing'.\A         on line 10 of _scaffolding.scss, in `box-sizing'\A         from line 10 of _scaffolding.scss\A         from line 10 of ionic.scss\A \A 5: \A 6:   // Variables \"mixins\",\A 7: \"variables\",\A 8: \A 9:   // Base \"reset\",\A 10: \"scaffolding\",\A 11: \"type\",\A 12: \A 13:   // Components \"action-sheet\",\A 14: \"backdrop\",\A 15: \"bar\","; }

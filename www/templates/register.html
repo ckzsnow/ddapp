@@ -1,0 +1,28 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
+    <h1 class="title">注册</h1>
+    <a href="#/app/login" class="button button-icon icon">登录</a>
+  </div>
+  <ion-content class="has-header">
+      <div class="input-1 top">
+        <input ng-model="registerData.userId" type="text" placeholder="请输入用户名"/>
+        <i class="icon ion-android-phone-portrait"></i>
+      </div>
+      <div class="button-dou top">
+        <div><input style="width: 100%;margin-top:10px;padding-left: 10px" ng-model="registerData.userVerifyCode" type="text" placeholder="请输入验证码"/></div>
+        <div class="active" ng-click="getCode()">获取验证码</div>
+      </div>
+      <div class="input-1 top">
+        <input ng-model="registerData.userPwd" type="password" placeholder="请输入密码"/>
+        <i class="icon ion-ios-locked"></i>
+      </div>
+      <div class="input-1 top">
+        <input ng-model="registerData.userPwd2" type="password" placeholder="请再次属于密码"/>
+        <i class="icon ion-ios-locked"></i>
+      </div>
+      <div class="button-dou" style="margin-top: 130px">
+        <div class="active" ng-click="doRegister()">注&nbsp;册</div>
+      </div>
+  </ion-content>
+</ion-view>

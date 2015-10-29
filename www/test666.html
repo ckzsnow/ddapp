@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>WebSoket Demo</title>
+        <meta charset="utf-8">
+		    <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript">
+
+		   function sendVerifyCode() {
+			   $.ajax({
+					url : 'http://139.196.23.131:7070/ddcb/safety/sendVerifyCode?userId=18601615517',
+					type : "GET",
+					data : {},
+					xhrFields: {
+                      withCredentials: true
+                    },
+                    crossDomain: true,
+					success : function(data) {
+						alert(data.errorMsg);
+					}
+				});
+		   }
+
+		   function userRegister() {
+			   var code = document.getElementById("code").value;
+				$.ajax({
+					url : 'http://139.196.23.131:7070/ddcb/safety/userRegister?userId=18601615517&userPwd=123&userVerifyCode=' + code,
+					type : "GET",
+					data : {},
+					xhrFields: {
+                      withCredentials: true
+                    },
+                    crossDomain: true,
+					success : function(data) {
+						alert(data.errorMsg);
+					}
+				});
+		   }
+        </script>
+    </head>
+    <body>
+
+		<button onclick='sendVerifyCode()'>发送验证码</button>
+
+		<input type='text' id='code' name='code'>
+		<button onclick='userRegister()'>注册</button>
+    <label>
+      <p>哈哈哈哈哈哈哈哈哈</p>
+    <select >
+      <option>1</option>
+      <option>1</option>
+      <option>1</option>
+      <option>1</option>
+    </select>
+    </label>
+    </body>
+</html>

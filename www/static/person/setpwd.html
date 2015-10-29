@@ -1,0 +1,23 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
+    <h1 class="title">设置密码</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header contain">
+    <article>
+      <section class="personage-col-2 top">
+        <input type="password" ng-model="pwdSetData.userOldPwd" placeholder="旧密码"/>
+      </section>
+      <section class="personage-col-2 top">
+        <input type="password" ng-model="pwdSetData.userNewPwd" placeholder="新密码"/>
+      </section>
+      <section class="personage-col-2 top">
+        <input type="password" ng-model="pwdSetData.userNewPwd2"  placeholder="确认密码"/>
+      </section>
+      <section class="personage-col-2 top">
+        <p style="text-align: center;color:#F50208" ng-click="upPwd()">确认修改</p>
+      </section>
+    </article>
+  </ion-content>
+</ion-view>

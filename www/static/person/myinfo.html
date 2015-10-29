@@ -1,0 +1,70 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
+    <h1 class="title">我的资料</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header contain">
+    <article>
+      <section class="personage-col-1">
+        <p>{{userComm.userName||userComm.userId||"暂无"}}</p>
+        <img src="img/person.jpg" alt=""/>
+      </section>
+      <div class="personage-col-3 top myinfo">
+        <section class="personage-col-2">
+          <p>昵称</p>
+          <div class="info-top">
+            {{userComm.userName||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>真实姓名</p>
+          <div class="info-top">
+            {{userComm.userName||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>性别</p>
+          <div class="info-top">
+            {{{"0":"男","1":"女"}[userComm.userSex]||userComm.userSex}}
+          </div>
+        </section>
+      </div>
+      <div class="personage-col-3 top myinfo">
+        <section class="personage-col-2">
+          <p>所在行业</p>
+          <div class="info-top">
+            {{userComm.industryName||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>任职机构</p>
+          <div class="info-top">
+            {{userComm.companyName||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>职位</p>
+          <div class="info-top">
+            {{userComm.companyPosition||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>工作年限</p>
+          <div class="info-top">
+            {{userComm.workYear||"暂无"}}
+          </div>
+        </section>
+        <section class="personage-col-2">
+          <p>所在城市</p>
+          <div class="info-top">
+            {{userComm.provinceName||"暂无"}}
+          </div>
+        </section>
+      </div>
+      <section class="personage-col-2 top" ui-sref="app.myinfoset">
+        <p style="text-align: center;color:#0084FF">编辑资料</p>
+      </section>
+    </article>
+  </ion-content>
+</ion-view>

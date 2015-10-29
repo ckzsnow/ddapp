@@ -1,0 +1,407 @@
+{
+  "data": {
+    "count": 17,
+    "size": 8,
+    "page": 1,
+    "list": [
+      {
+        "id": "294e4ed6-89b5-4da8-a9cb-c3bc80266268",
+        "orgId": 99,
+        "orgName": "国泰元鑫",
+        "name": "国泰元鑫-富金宝嘉和新三板一号专项资产管理计划",
+        "type": "6",
+        "pawn": "",
+        "status": "在售",
+        "used": "金融市场",
+        "usedId": "4",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/99_square.jpg",
+        "city": "上海市",
+        "maxLimit": 10000,
+        "minLimit": 100,
+        "distribution": "按年付息",
+        "time": "36-36个月",
+        "rate": "浮动收益",
+        "endDay": 27,
+        "endDate": "2015-08-11",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "6.00%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100万以上",
+                "investEnd": "",
+                "rateOfReturn": "6.0%",
+                "rateOfReturnMax": "6.0%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "d6db433d-13a2-4921-930a-2790f62f805d",
+        "orgId": 17,
+        "orgName": "国民信托",
+        "name": "国民信托-昆明盛世桃源集合资金信托计划第二期",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/17_square.jpeg",
+        "city": "北京市",
+        "maxLimit": 5545,
+        "minLimit": 100,
+        "distribution": "半年付息",
+        "time": "24-24个月",
+        "rate": "9.3-10.0%",
+        "endDay": 27,
+        "endDate": "2015-08-11",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "1.60%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "1.6%",
+                "rateOfReturnMax": "1.6%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300含",
+                "investEnd": "1000万(不含)",
+                "rateOfReturn": "1.4%",
+                "rateOfReturnMax": "1.4%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "1000万以上",
+                "investEnd": "",
+                "rateOfReturn": "0.9%",
+                "rateOfReturnMax": "0.9%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "625e2ba2-b856-4f98-af98-e3b4d1b4e76b",
+        "orgId": 41,
+        "orgName": "中江信托",
+        "name": "中江信托-金马239号株洲芦淞棚户区改造开发有限公司应收账款投资集合信托计划",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/41_square.jpeg",
+        "city": "江西省南昌市",
+        "maxLimit": 15000,
+        "minLimit": 100,
+        "distribution": "半年付息",
+        "time": "24-24个月",
+        "rate": "9.5-10.5%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "1.60%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100万以上",
+                "investEnd": "",
+                "rateOfReturn": "1.6%",
+                "rateOfReturnMax": "1.6%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "7127341c-081a-401d-813a-8f33e11d2c2d",
+        "orgId": 17,
+        "orgName": "国民信托",
+        "name": "国民信托-贵定宝山股权收益权集合信托计划第三期",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/17_square.jpeg",
+        "city": "北京市",
+        "maxLimit": 5680,
+        "minLimit": 100,
+        "distribution": "半年付息",
+        "time": "24-24个月",
+        "rate": "10.0-10.5%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "2.20%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "2.2%",
+                "rateOfReturnMax": "2.2%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300万以上",
+                "investEnd": "",
+                "rateOfReturn": "2.0%",
+                "rateOfReturnMax": "2.0%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "04594121-02be-46de-9add-0969760e4885",
+        "orgId": 17,
+        "orgName": "国民信托",
+        "name": "国民信托-青州宏利应收债权收益权集合资金信托计划第三期",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/17_square.jpeg",
+        "city": "北京市",
+        "maxLimit": 12750,
+        "minLimit": 100,
+        "distribution": "半年付息",
+        "time": "24-24个月",
+        "rate": "9.4-10.2%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "2.10%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "2.1%",
+                "rateOfReturnMax": "2.1%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300含",
+                "investEnd": "1000万(不含)",
+                "rateOfReturn": "1.9%",
+                "rateOfReturnMax": "1.9%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "34bd83b3-7677-4f79-b05e-495ee07bc0aa",
+        "orgId": 17,
+        "orgName": "国民信托",
+        "name": "国民信托-辽宁海拓1号应收账款收益权集合资金信托计划",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/17_square.jpeg",
+        "city": "北京市",
+        "maxLimit": 10000,
+        "minLimit": 100,
+        "distribution": "按年付息",
+        "time": "24-24个月",
+        "rate": "9.5-10.2%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "2.00%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "2.0%",
+                "rateOfReturnMax": "2.0%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300含",
+                "investEnd": "800万(不含)",
+                "rateOfReturn": "1.8%",
+                "rateOfReturnMax": "1.8%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "800万以上",
+                "investEnd": "",
+                "rateOfReturn": "1.4%",
+                "rateOfReturnMax": "1.4%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "df3015c1-f758-4e92-95f5-4372d58eb0c5",
+        "orgId": 41,
+        "orgName": "中江信托",
+        "name": "中江信托-金马251号无锡凤翔建设应收账款集合信托计划第二期",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/41_square.jpeg",
+        "city": "江西省南昌市",
+        "maxLimit": 13050,
+        "minLimit": 100,
+        "distribution": "半年付息",
+        "time": "24-24个月",
+        "rate": "9.0-9.8%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "1.70%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "1.7%",
+                "rateOfReturnMax": "1.7%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300含",
+                "investEnd": "600万(不含)",
+                "rateOfReturn": "1.4%",
+                "rateOfReturnMax": "1.4%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "600万以上",
+                "investEnd": "",
+                "rateOfReturn": "0.7%",
+                "rateOfReturnMax": "0.7%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "83ed195b-1823-42d4-ad97-15142f926e9e",
+        "orgId": 37,
+        "orgName": "中泰信托",
+        "name": "中泰信托-成都温江新城西应收账款投资集合资金信托计划（三期）",
+        "type": "1",
+        "pawn": "",
+        "status": "在售",
+        "used": "基础设施",
+        "usedId": "1",
+        "statusId": "2",
+        "logo": "http://static.trust-one.com/img/org/37_square.jpeg",
+        "city": "上海市",
+        "maxLimit": 30000,
+        "minLimit": 100,
+        "distribution": "按年付息",
+        "time": "24-24个月",
+        "rate": "9.5-10.3%",
+        "endDay": 26,
+        "endDate": "2015-08-10",
+        "isGuarded": true,
+        "isPayable": false,
+        "list": [
+          {
+            "orgId": 8893,
+            "orgShortName": "聚孚金融",
+            "orgFullName": "上海聚孚金融信息服务有限公司",
+            "orgRateOfReturnMax": "2.00%",
+            "palance": "合同给到我，产品成立后5个工作日内结款",
+            "commissions": [
+              {
+                "allotTime": "24个月",
+                "investStart": "100含",
+                "investEnd": "300万(不含)",
+                "rateOfReturn": "2.0%",
+                "rateOfReturnMax": "2.0%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "300含",
+                "investEnd": "600万(不含)",
+                "rateOfReturn": "1.8%",
+                "rateOfReturnMax": "1.8%"
+              },
+              {
+                "allotTime": "24个月",
+                "investStart": "600含",
+                "investEnd": "3000万(不含)",
+                "rateOfReturn": "1.2%",
+                "rateOfReturnMax": "1.2%"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

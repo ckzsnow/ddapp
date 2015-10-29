@@ -1,0 +1,91 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <h1 class="title">点豆成兵</h1>
+    <a href="#/app/banner" class="button button-icon icon ion-person"></a>
+  </div>
+  <ion-content class="has-header has-tabs contain">
+    <div class="home-title">
+      <span class="active">精选</span>
+      <span>最新</span>
+    </div>
+    <div class="slide">
+      <ion-slide-box  does-continue="true" slide-interval="2000" show-pager="true"  delegate-handle="image-viewer" auto-play="true"
+                     on-slide-changed="slideHasChanged($index)">
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+        <ion-slide>
+          <img ng-src="img/home.png" style="width: 100%"/>
+        </ion-slide>
+      </ion-slide-box>
+    </div>
+    <div class="list">
+      <div class="item" ui-sref="app.classInfo">
+        <div class="home-col-1">
+          <h3>移动端app设计趋势</h3>
+        </div>
+        <div class="home-col-2">
+          <span>IT/UI设计/初级/</span>
+        </div>
+        <div class="home-col-3">
+         <p>从移动端起，主流设计风格定型，移动端的APP设计才渐入佳境</p>
+        </div>
+        <div class="home-col-4">
+          <img src="img/person.jpg"/>
+          <span class="mid">BAXMAX大白</span>
+          <span class="small">上海如墨信息科技丨设计师</span>
+        </div>
+        <div class="home-col-5">
+          <div>
+            <span class="icon ion-android-time my-icon"></span>2015.9.28<span style="padding-left: 10px">9:45</span>
+          </div>
+          <div>
+            <span class="icon ion-ios-heart"></span>
+            <span>10</span>
+            <span class="icon ion-ios-person left"></span>
+            <span>109</span>
+          </div>
+        </div>
+      </div>
+      <div class="item" ui-sref="app.classProCtrl">
+        <div class="home-col-1">
+          <h3>移动端app设计趋势</h3>
+        </div>
+        <div class="home-col-2">
+          <span>IT/UI设计/初级/</span>
+        </div>
+        <div class="home-col-3">
+          <p>从移动端起，主流设计风格定型，移动端的APP设计才渐入佳境</p>
+        </div>
+        <div class="home-col-4">
+          <img src="img/person.jpg"/>
+          <span class="mid">BAXMAX大白</span>
+          <span class="small">上海如墨信息科技丨设计师</span>
+        </div>
+        <div class="home-col-5">
+          <div>
+            <span class="icon ion-android-time my-icon"></span>2015.9.28<span style="padding-left: 10px">9:45</span>
+          </div>
+          <div>
+            <span class="icon ion-ios-heart"></span>
+            <span>10</span>
+            <span class="icon ion-ios-person left"></span>
+            <span>109</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-infinite-scroll
+      ng-if="!MoreDataloading2"
+      on-infinite="loadMore()"
+      distance="10%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

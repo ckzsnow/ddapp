@@ -1,0 +1,679 @@
+//css页面初始化区域
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s,
+samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, input {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+:focus {
+  outline: 0;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+input {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input:hover {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  background-color: map_get($bgc, article);
+  @include common-font;
+
+}
+
+article {
+  background-color: map_get($bgc, article);
+  height: 100%;
+  padding-bottom: 30px;
+}
+
+.contain {
+  background-color: map_get($bgc, article);
+}
+
+//全局组件
+.top {
+  margin-top: 20px;
+}
+
+.bottom {
+  margin-bottom: 20px;
+}
+
+.left {
+  margin-left: 20px;
+}
+
+.footer {
+  @include flex;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 60px;
+  border-top: 1px solid #DEDEDE;
+}
+
+.footer > a {
+  @include flex-son(1);
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #999999;
+}
+
+.footer > a.active {
+  color: #548DFE;
+}
+
+.flex-col {
+  @include flex;
+  color: map_get($color, color-1);
+}
+
+.flex-col > div {
+  @include flex-son(1);
+}
+
+//home
+.home-title {
+  text-align: center;
+  color: map_get($color, back);
+  font-size: map_get($font-size, top);
+  margin-bottom: 1px;
+
+}
+
+.home-title > span {
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.home-title > span.active {
+  border-bottom: 3px solid map_get($color, head);
+}
+
+.home-col-1, .home-col-2, .home-col-3, .home-col-4，.home-col-5 {
+  @include flex;
+}
+
+.home-col-5 span.my-icon {
+  font-size: 26px;
+  color: map_get($color, foot-check);
+  margin-right: 5px;
+  vertical-align: sub;
+}
+
+.home-col-1 > h3 {
+  @include flex-son(1);
+  font-size: 22px;
+  line-height: 47px;
+  color:#2A7EE0;
+}
+
+.home-col-2 > span {
+  display: inline-block;
+  @include flex-son(1);
+  color: map_get($color, tip);
+  line-height: 33px;
+
+}
+
+.home-col-2 > span:nth-child(2) {
+  text-align: right;
+}
+
+.home-col-3 {
+  margin: 10px auto;
+}
+
+.home-col-3 > p {
+  font-size: 16px;
+  white-space: normal;
+}
+
+.home-col-4 {
+  margin-top: 15px;
+}
+
+.home-col-4 > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  vertical-align: middle;
+}
+
+.home-col-4 > span.mid {
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.home-col-4 > span.small {
+  font-size: 14px;
+  margin-left: 10px;
+  color: map_get($color, tip);
+}
+
+.home-col-5 {
+  margin-top: 10px;
+  @include flex;
+}
+
+.home-col-5 > div {
+  color: #BDC3D1;
+  @include flex-son(1);
+}
+
+.home-col-5 > div:nth-child(2) {
+  text-align: right;
+}
+
+.home-col-5 > div:nth-child(2) > span.icon {
+  font-size: 22px;
+}
+
+span.but {
+  background-color: map_get($bgc, button);
+  color: #fff;
+  /* height: 40px; */
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+section,label.section{
+  @include flex;
+  background-color: map_get($bgc, section);
+  padding: 10px;
+}
+
+.personage-col-1 {
+  height: 100px;
+}
+
+.personage-col-1 > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  margin-top: 10px;
+}
+
+.personage-col-1 > p {
+  line-height: 80px;
+  margin-left: 20px;
+  @include flex-son(1);
+}
+
+.personage-col-1 > div > a {
+  color: map_get($color, icon);
+}
+
+.personage-col-2 {
+  height: 60px;
+}
+
+.personage-col-2 > span {
+  line-height: 40px;
+}
+
+.personage-col-2 > a {
+  line-height: 40px;
+  font-size: 28px;
+  color: map_get($color, icon);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.personage-col-2 i.my-icon {
+  font-size: 30px;
+  vertical-align: sub;
+  color: map_get($color, icon);
+}
+
+.personage-col-2 > p {
+  line-height: 40px;
+  //  margin-left: 20px;
+  @include flex-son(1);
+  //  font-weight: 600;
+}
+
+.personage-col-2 > div.personage-col-but {
+  padding-left: 10px;
+  height: 30px;
+  margin-top: 9px;
+  color: map_get($color, foot-check);
+}
+.personage-col-2 > div > input{
+  display: inline-block;
+  text-align: right;
+  position: absolute;
+  right: 25px;
+  top: -7px;
+}
+.personage-col-2 > div > a {
+  color: map_get($color, icon);
+}
+
+.personage-col-2 > input {
+  @include flex-son(1);
+  display: inline-block;
+}
+
+.personage-col-2 > div.info-top {
+  margin-top: 10px;
+  position: relative;
+}
+
+.personage-col-3 {
+  padding-left: 10px;
+  background-color: #fff;
+}
+
+.personage-col-3 > section {
+  padding-left: 0;
+}
+
+.personage-col-3 > section:nth-child(n+2) {
+  border-top: 1px solid map_get($color, border);
+}
+
+.getCode {
+  padding-left: 10px;
+  border-left: 1px solid #C0C0C0;
+  height: 30px;
+  margin-top: 6px;
+}
+
+.getCode > span {
+  line-height: 30px;
+}
+
+.question-col {
+  padding: 10px 20px 10px 0;
+  border-bottom: 1px solid map_get($color, border);
+}
+
+.question-col > p {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #303030;
+}
+
+.question-col > div.section {
+  color: #606060;
+}
+
+.question-but {
+  text-align: right;
+  color: map_get($color, foot-check);
+  margin-top: 10px;
+}
+
+.question-but i {
+  font-size: 22px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.button-tips {
+  margin-top: 5px;
+  color: map_get($color, foot-check);
+  padding-left: 10px;
+}
+
+.button-tips > i {
+  vertical-align: sub;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.myinfo p {
+  color: map_get($color, back1);
+}
+
+.button-dou {
+  margin-left: 40px;
+  margin-right: 40px;
+  @include flex;
+}
+
+.button-dou > div {
+  height: 60px;
+  color: #2B7DE1;
+  padding: 0 10px;
+  border: 1px solid #2B7DE1;
+  line-height: 60px;
+  text-align: center;
+  @include flex-son(1);
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.button-dou > div:nth-child(n+2) {
+  margin-left: 20px;
+}
+
+.button-dou > div.active {
+  background-color: #2B7DE1;
+  color: #fff;
+}
+
+.input-1 {
+  border: 1px solid #2B7DE1;
+  margin-left: 40px;
+  margin-right: 40px;
+  height: 60px;
+  line-height: 60px;
+  @include flex;
+}
+
+.input-1 > input {
+  margin-top: 10px;
+  padding-left: 10px;
+  @include flex-son(1);
+}
+
+.input-1 > i {
+  margin-right: 10px;
+  color: map_get($color, icon);
+  font-size: 150%;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.but-a {
+  margin-left: 40px;
+  margin-right: 40px;
+  @include flex;
+}
+
+.but-a > a {
+  @include flex-son(1);
+  display: block;
+  font-size: 120%;
+  color: map_get($color, back);
+  text-decoration: none;
+}
+
+.but-a > a:nth-child(2) {
+  text-align: right;
+}
+
+.talk-col {
+  margin-top: 20px;
+  @include flex;
+}
+
+.talk-col > img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 25px;
+  display: inline-block;
+}
+
+.talk-col > div {
+  @include flex-son(1);
+  border: 1px solid #C1C1C1;
+  position: relative;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.talk-right {
+  margin-right: 90px;
+}
+
+.talk-right > img {
+  position: absolute;
+  top: 10px;
+  left: -22px;
+}
+
+.talk-left {
+  margin-left: 90px;
+}
+
+.talk-left > img {
+  position: absolute;
+  top: 10px;
+  right: -22px;
+}
+
+.talk-input {
+  border-top: 1px solid #C1C1C1;
+  padding: 0 10px;
+  background-color: #F2F2F2;
+}
+
+.talk-input > input {
+  display: block;
+  @include flex-son(1);
+  border: 1px solid #C1C1C1;
+  background-color: #fff;
+  height: 34px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+.talk-input > a {
+  line-height: 43px;
+  color: #3970B3;
+}
+
+.talk-input > a:nth-child(3) {
+  font-size: 30px;
+}
+
+.text-section {
+  color: #666666;
+  white-space: normal;
+  margin-top: 10px;
+}
+
+.person-mask {
+  position: relative
+}
+
+.person-mask > img.mask {
+  width: 100%
+}
+
+.person-mask > img.inner {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -90px;
+  margin-left: -50px;
+  border: 10px solid;
+  border-color:rgba(255,255,255,0.5);
+  -webkit-box-shadow:0 0 11px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 0 11px rgba(0,0,0,0.5);
+  box-shadow: 0 0 11px rgba(0,0,0,0.5);
+//  -webkit-transition:all 0.3s ease;
+//  -moz-transition:all 0.3s ease;
+//  -ms-transition:all 0.3s ease;
+//  -o-transition:all 0.3s ease;
+//  transition:all 0.3s ease;
+}
+.nav-title{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  color: #fff;
+  padding: 10px 0;
+  @include flex;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.nav-title>div{
+  @include flex-son(1);
+  text-align: center;
+}
+.nav-title>div:nth-child(1){
+  border-right: 1px solid #fff;
+}
+.nav-title>div.active>span{
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+.prod-tittle{
+  position: absolute;
+  bottom: 60px;
+  text-align:
+  center;width: 100%
+}
+.item-select:after{
+  display: none;
+}
+.item-select>select{
+  padding: 0 26px 0 16px;
+}
+label{
+  @include flex-son(1);
+ text-align: right;
+  position: relative;
+}
+label>i{
+  position: absolute;
+  right: 3px;
+  top: 5px;
+}
+
+.industry-col{
+  margin: 5px;
+  width: 65px;
+  height: 65px;
+  display: inline-block;
+  background-color: #ff0000;
+  box-sizing: content-box;
+  position: relative;
+}
+.industry-col>img{
+  width: 100%;
+  height: 65px;
+}
+.industry-col>p.title{
+  color: #fff;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index:3;
+}
+.industry-col>div.mask{
+  width: 100%;
+  height: 80%;
+  top: 20%;
+  left: 0;
+  position: absolute;
+  background-image: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.1) 40%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.5) 100%);
+  background-image: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.1) 40%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.5) 100%);
+  background-image: -o-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.1) 40%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.5) 100%);
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.1) 40%,rgba(0,0,0,.3) 70%,rgba(0,0,0,.5) 100%);
+}
+.industry-col>div.choose{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(43, 125, 225, 0.8);
+}
+.industry-col>div.choose>i{
+  font-size: 22px;
+  color: #fff;
+  margin-left: 15px;
+  line-height: 60px;
+}
+.choose-detail{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(43, 125, 225, 0.8);
+}
+.choose-detail>p{
+  font-size: 14px;
+  text-align: center;
+  color:#fff;
+}
+.choose-detail>li{
+  color:#fff;
+  font-size: 12px
+}
+.slide{
+  position: relative;
+}
+.bar-button{
+  width: 40px;
+  height:40px;
+  position: absolute;
+  top: 50%;
+  margin-top: -20px;
+  background-color: rgba(0,0,0,0.5);
+}
+.bar-button>i{
+  line-height: 49px;
+  font-size: 22px;
+  margin-left: 7px;
+  color: #fff;
+}
+.bar-bottom{
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+}
+.bar-bottom>p{
+  text-align: center;
+  color: #fff;
+  line-height: 30px;
+}
+.bar-bottom>i{
+
+}
