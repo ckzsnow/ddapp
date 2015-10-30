@@ -7,36 +7,19 @@
   <ion-content class="has-header has-tabs">
     <div class="home-title">
       <span class="active">行业大类</span>
-      <span ui-sref="app.findField">细分行业</span>
+      <span ui-sref="app.findField">行业细分</span>
     </div>
     <div class="top">
       <div style="margin: auto;width: 320px;">
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">咨询</p>
-          <div class="choose">
+        <div class="industry-col" ng-repeat="industry in industryImg" ng-click="clickIndustry({{$index}})">
+          <img ng-src="{{industry.icon}}"/>
+          <div class="choose" ng-if="industryImg[$index].selected">
             <i class="button-icon icon ion-checkmark-round"></i>
           </div>
         </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">财务</p>
-        </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">知识</p>
-        </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">游戏</p>
-        </div>
       </div>
     </div>
-    <section class="personage-col-2 top" ng-click="seachCourse()">
+    <section class="personage-col-2 top" ng-click="nextPage()">
       <p style="text-align: center;color:#F50208">下一页</p>
     </section>
   </ion-content>

@@ -33,4 +33,18 @@ angular.module('find.controllers', [])
       $scope.modal.hide();
     }
   })
+  .controller("findCtrl",function($scope,itzhao,$rootScope,$ionicModal,$LocalStorage,itzhao,statement){
+    $scope.nextPage = function() {
+    	 $rootScope.$state.go('app.findField');
+    }
+    $rootScope.selectedCategoryInfo = $LocalStorage.getObject("selected-category-info");
+    if(itzhao.check.isEmpty($rootScope.selectedCategoryInfo)) {
+    	$rootScope.selectedCategoryInfo = [{"industryId":"1", "field":[{"fieldId":"1", "stageId":[1,2,3]}]}];
+    }
+    $scope.industryImg = statement.industry;
+    $scope.clickIndustry = function(index) {
+    	$scope.industryImg[index].selected = !$scope.industryImg[index].selected;
+    	
+    }
+  })
 

@@ -13,7 +13,8 @@
     "url": "/find",
     "views": {
       "menuContent": {
-        "templateUrl": "static/find/find.html"
+        "templateUrl": "static/find/find.html",
+        "controller": "findCtrl"
       }
     }
   },
