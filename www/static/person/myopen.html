@@ -7,61 +7,48 @@
   <ion-content class="has-header">
     <div class="person-mask" style="">
       <img class="mask" src="img/banner.jpg" alt="" style=""/>
-      <img class="inner" src="img/person.jpg"  alt="" style=""/>
+      <img class="inner" ng-src="http://139.196.23.131:7070/ddcb{{userComm.userPhoto}}"  alt="" style=""/>
       <div class="prod-tittle" style="">
-        <p>Baymax大白</p>
-        <p>上海如墨信息科技有限公司|UI设计师</p>
+        <p>{{userComm.userName||"暂无"}}</p>
+        <p>{{userComm.companyName}}丨{{userComm.companyPosition}}</p>
       </div>
       <div class="nav-title">
-        <div class="active"> <span>精选</span></div>
-        <div>最新</div>
+        <div class="active"><span>所开课程</span></div>
+        <div ui-sref="app.myopen_latest">个人简介</div>
       </div>
     </div>
+    <ion-refresher pulling-text="下拉获取最新课程" refreshing-text="正在获取课程信息!" on-refresh="refreshMyOpenCourse()"></ion-refresher>
     <div class="list">
-      <div class="item" ui-sref="app.classInfo">
+    	<div ng-show="initMyOpenData" style="text-align: center;"><ion-spinner></ion-spinner></div>
+    	<div ng-show="!initMyOpenData && !myOpenCourse.length"><p style="text-align:center;padding-top:15px;padding-bottom:15px;padding-left:15px;font-size:10px;color:#7A7A7A">您当前还没有开设公开课！</p></div>
+    	<div class="item" ng-repeat="col in myOpenCourse">
         <div class="home-col-1">
-          <h3>移动端app设计趋势</h3>
+          <h3>{{col.courseInfo.name}}</h3>
         </div>
         <div class="home-col-2">
-          <span>IT/UI设计/初级/</span>
+          <span>{{col.courseInfo.industryName}}/{{col.courseInfo.fieldName}}/{{col.courseInfo.stageName}}</span>
+          <span><span class="icon ion-android-time my-icon"></span>{{col.courseInfo.formatSchoolTime}}</span>
         </div>
         <div class="home-col-3">
-          <p>从移动端起，主流设计风格定型，移动端的APP设计才渐入佳境</p>
+          <p>{{col.courseInfo.brief}}</p>
         </div>
         <div class="home-col-5">
           <div>
-            <span class="icon ion-android-time my-icon"></span>2015.9.28<span style="padding-left: 10px">9:45</span>
-          </div>
-          <div>
             <span class="icon ion-ios-heart"></span>
-            <span>10</span>
+            <span>{{col.courseInfo.praiseAmount}}</span>
             <span class="icon ion-ios-person left"></span>
-            <span>109</span>
-          </div>
-        </div>
-      </div>
-      <div class="item" ui-sref="app.classInfo">
-        <div class="home-col-1">
-          <h3>移动端app设计趋势</h3>
-        </div>
-        <div class="home-col-2">
-          <span>IT/UI设计/初级/</span>
-        </div>
-        <div class="home-col-3">
-          <p>从移动端起，主流设计风格定型，移动端的APP设计才渐入佳境</p>
-        </div>
-        <div class="home-col-5">
-          <div>
-            <span class="icon ion-android-time my-icon"></span>2015.9.28<span style="padding-left: 10px">9:45</span>
+            <span>{{col.courseInfo.enterAmount}}</span>
           </div>
           <div>
-            <span class="icon ion-ios-heart"></span>
-            <span>10</span>
-            <span class="icon ion-ios-person left"></span>
-            <span>109</span>
+          	<span class="but right" style="font-size: 15px;" ng-click="enterCourse({{$index}})">进入</span>
           </div>
         </div>
       </div>
     </div>
+  <ion-infinite-scroll
+    	ng-if="myOpenScrollLoadMore"
+      on-infinite="loadMoreMyOpenCourse()"
+      distance="1%">
+  </ion-infinite-scroll>
   </ion-content>
 </ion-view>

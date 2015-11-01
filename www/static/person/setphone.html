@@ -11,7 +11,7 @@
         <p style="text-align: right">{{userComm.userId}}</p>
       </section>
       <section class="personage-col-2 top">
-        <input type="text" ng-model="phoneSetData.newUserId" placeholder="请输入新手机号"/>
+        <input type="text" ng-model="phoneSetData.userId" placeholder="请输入新手机号"/>
       </section>
       <section class="personage-col-2 top">
         <input type="text" ng-model="phoneSetData.userVerifyCode" placeholder="请输入验证码"/>
@@ -21,7 +21,7 @@
         </div>
       </section>
       <section class="personage-col-2 top">
-        <p style="text-align: center;color:#F50208">确认修改</p>
+        <p style="text-align: center;color:#F50208" ng-click="upPhone()">确认修改</p>
       </section>
     </article>
   </ion-content>

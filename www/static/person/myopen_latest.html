@@ -1,0 +1,24 @@
+<ion-view>
+  <div class="bar bar-header bar-positive">
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
+    <h1 class="title">我开设的公开课</h1>
+    <!--<a class="button button-icon icon ion-navicon"></a>-->
+  </div>
+  <ion-content class="has-header">
+    <div class="person-mask" style="">
+      <img class="mask" src="img/banner.jpg" alt="" style=""/>
+      <img class="inner" ng-src="http://139.196.23.131:7070/ddcb{{userComm.userPhoto}}"  alt="" style=""/>
+      <div class="prod-tittle" style="">
+        <p>{{userComm.userName||"暂无"}}</p>
+        <p>{{userComm.companyName}}丨{{userComm.companyPosition}}</p>
+      </div>
+      <div class="nav-title">
+        <div><span ui-sref="app.myopen">所开课程</span></div>
+        <div class="active"><span>个人简介</span></div>
+      </div>
+    </div>
+    <div class="list">
+      <div style="margin:10px;">{{userComm.resume}}</div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -4,23 +4,25 @@
     <h1 class="title">发现</h1>
     <!--<a class="button button-icon icon ion-navicon"></a>-->
   </div>
-  <ion-content class="has-header has-tabs">
-    <div class="home-title">
+  <ion-content class="has-header has-tabs" style="background-color: #EBEBEB;">
+    <div class="home-title" style="background-color: white;font-size:15px;">
       <span class="active">行业大类</span>
-      <span ui-sref="app.findField">行业细分</span>
+      <span >行业细分</span>
     </div>
-    <div class="top">
-      <div style="margin: auto;width: 320px;">
-        <div class="industry-col" ng-repeat="industry in industryImg" ng-click="clickIndustry({{$index}})">
+    <div style="height:15px;width:100%;"></div>
+    <div style="background-color: white;">
+      <div style="margin: auto;width: 100%;padding-left:10px;padding-top:10px;padding-bottom:10px;">
+        <div class="industry-col" ng-repeat="industry in allIndustry" ng-click="clickIndustry({{$index}})">
           <img ng-src="{{industry.icon}}"/>
-          <div class="choose" ng-if="industryImg[$index].selected">
+          <div class="choose" ng-if="allIndustry[$index].selected">
             <i class="button-icon icon ion-checkmark-round"></i>
           </div>
         </div>
       </div>
     </div>
-    <section class="personage-col-2 top" ng-click="nextPage()">
-      <p style="text-align: center;color:#F50208">下一页</p>
-    </section>
+    <div style="height:15px;width:100%;background-color:#EBEBEB ;"></div>
+    <div style="width:100%;background-color: white;margin-bottom:30px;" ng-click="nextPage()">
+      <p style="padding-top:15px;padding-bottom:15px;text-align: center;color:#548DFE">下一步</p>
+    </div>
   </ion-content>
 </ion-view>

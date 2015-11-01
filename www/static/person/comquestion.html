@@ -7,29 +7,29 @@
   <ion-content class="has-header contain">
     <div style="padding-left: 20px;background-color: #fff;">
       <div class="question-col">
-        <p>课程定价体系</p>
-        <div class="section">
-          测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+        <p style="color:#538FFD;">1.课程定价体系</p>
+        <div class="section" ng-show="question1">
+                    测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
         </div>
-        <div class="section" style="display: none">
-          测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文..
+        <div class="section" ng-show="!question1">
+                    测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文...
         </div>
         <div class="question-but">
-          <span><i class="icon ion-ios-arrow-up"></i>收起</span>
-          <span style="display: none"><i class="icon ion-ios-arrow-down"></i>展开</span>
+          <span ng-click="clickButton('question1')" ng-show="question1"><i class="icon ion-ios-arrow-up"></i>收起</span>
+          <span ng-click="clickButton('question1')" ng-show="!question1"><i class="icon ion-ios-arrow-down"></i>展开</span>
         </div>
       </div>
       <div class="question-col" style="border: none">
-        <p>课程定价体系</p>
-        <div class="section" style="display: none">
-          测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
+        <p style="color:#538FFD;">2.服务质量争议处理法</p>
+        <div class="section" ng-show="question2">
+                    测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字
         </div>
-        <div class="section">
-          测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文..
+        <div class="section" ng-show="!question2">
+                    测试文字测试文字测试文字测试文字测试文字测试文字测试文字测试文...
         </div>
         <div class="question-but">
-          <span style="display: none"><i class="icon ion-ios-arrow-up"></i>收起</span>
-          <span><i class="icon ion-ios-arrow-down"></i>展开</span>
+          <span ng-click="clickButton('question2')" ng-show="question2"><i class="icon ion-ios-arrow-up"></i>收起</span>
+          <span ng-click="clickButton('question2')" ng-show="!question2"><i class="icon ion-ios-arrow-down"></i>展开</span>
         </div>
       </div>
     </div>

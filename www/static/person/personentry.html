@@ -1,12 +1,12 @@
 <ion-view>
   <div class="bar bar-header bar-positive">
-    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
     <h1 class="title">申请公开课</h1>
     <!--<a class="button button-icon icon ion-navicon"></a>-->
   </div>
   <ion-content class="has-header contain">
    <article>
-     <div class="personage-col-3 top">
+     <div class="personage-col-3">
        <section class="personage-col-2">
          <p>真实姓名</p>
          <div class="info-top">
@@ -65,17 +65,18 @@
          </label>
        </section>
        <section class="personage-col-2">
-         <p>名片认证
-           <i class="icon ion-image my-icon"></i>
-         </p>
-         <div class="personage-col-but">
-           <span>上传</span>
-         </div>
+		      	<p>名片认证
+			        <i class="icon ion-image my-icon" ng-show="userComm.userVisitCard == ''"></i>
+			      	<span ng-show="userComm.userVisitCard != ''" style="width:60px;height:60px;display: inline-block;vertical-align: middle;"><img style="width:40px;height:40px;" src="img/home.png"/></span>
+		        </p>
+		       	<div class="personage-col-but">
+           		<span style="margin-right:10px;float:right;" ng-click="uploadCard()">上传</span>
+         		</div>
        </section>
      </div>
      <p class="button-tips"><i class="icon ion-android-warning"></i>此页信息全为必填项</p>
      <section class="personage-col-2 top" ui-sref="app.personEntry2">
-       <p style="text-align: center;color:#F50208">下一页</p>
+       <p style="text-align: center;color:#538FFD">下一页</p>
      </section>
    </article>
   </ion-content>

@@ -1,21 +1,21 @@
 <ion-view>
   <div class="bar bar-header bar-positive">
-    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
     <h1 class="title">申请开课</h1>
     <!--<a class="button button-icon icon ion-navicon"></a>-->
   </div>
   <ion-content class="has-header contain">
    <article>
-     <div class="personage-col-3 top">
+     <div class="personage-col-3">
        <section class="personage-col-2" style="height: 300px;">
-         <textarea type="text" ng-model="upData.resume"  placeholder="个人介绍(最多15字)" style="width: 100%;">
+         <textarea type="text" ng-model="addCourseData.resume"  placeholder="个人介绍(最多15字)" style="width: 100%;">
          </textarea>
        </section>
 
      </div>
      <p class="button-tips"><i class="icon ion-android-warning"></i>此页信息全为必填项</p>
-     <section class="personage-col-2 top" ng-click="updataResume()">
-       <p style="text-align: center;color:#F50208">提交审核</p>
+     <section class="personage-col-2 top" ng-click="addCourse()">
+       <p style="text-align: center;color:#538FFD">提交审核</p>
      </section>
    </article>
   </ion-content>

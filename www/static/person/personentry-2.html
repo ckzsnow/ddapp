@@ -1,12 +1,12 @@
 <ion-view>
   <div class="bar bar-header bar-positive">
-    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
     <h1 class="title">申请开课</h1>
     <!--<a class="button button-icon icon ion-navicon"></a>-->
   </div>
   <ion-content class="has-header contain">
    <article>
-     <div class="personage-col-3 top">
+     <div class="personage-col-3">
        <section class="personage-col-2">
          <input type="text" ng-model="addCourseData.name" placeholder="请输入课程名称(最多15字)"/>
        </section>
@@ -20,14 +20,14 @@
          <p>课程所属行业大类</p>
          <label class="item-input item-select">
           <select ng-model="addCourseData.industry_id" ng-options="a.id as a.name for a in industry" ng-change="getField()">
-          </select>
+					</select>
          <i class="button-icon icon ion-ios-arrow-right"></i>
        </label>
        </section>
        <section class="personage-col-2">
          <p>课程所属行业细分</p>
          <label class="item-input item-select">
-           <select ng-model="addCourseData.field_id" ng-options="a.id as a.name for a in industry">
+           <select ng-model="addCourseData.field_id" ng-options="a.id as a.name for a in fieldTmp" ng-click="fieldClick()">
            </select>
            <i class="button-icon icon ion-ios-arrow-right"></i>
          </label>
@@ -35,7 +35,7 @@
        <section class="personage-col-2">
          <p>课程所属方向</p>
          <label class="item-input item-select">
-           <select ng-model="addCourseData.stage_id" ng-options="a.id as a.name for a in industry">
+           <select ng-model="addCourseData.stage_id" ng-options="a.id as a.name for a in stage">
            </select>
            <i class="button-icon icon ion-ios-arrow-right"></i>
          </label>
@@ -43,15 +43,22 @@
        <section class="personage-col-2">
          <p>开课时间</p>
          <label class="item-input item-select">
-           <select ng-model="addCourseData.school_time" ng-options="a.id as a.name for a in industry">
-           </select>
-           <i class="button-icon icon ion-ios-arrow-right"></i>
+         	<ionic-datepicker input-obj="datepickerObject">
+  					<button class="button button-positive" style="width:128px;text-align: center;"><strong style="font-size: 10px;">{{datepickerObject.inputDate | date:'yyyy-MM-dd'}}</strong></button>
+					</ionic-datepicker>
+				 </label>
+				 <label class="item-input item-select">
+          <ionic-timepicker input-obj="timePickerObject12Hour">
+						  <button class="button button-positive " style="width:128px;text-align: center;">
+						    <strong etime="timePickerObject12Hour.inputEpochTime" class="ng-binding" id="school_time" style="font-size: 10px;">{{selectedTime}}</strong>
+						  </button>
+					</ionic-timepicker>
          </label>
        </section>
      </div>
      <p class="button-tips"><i class="icon ion-android-warning"></i>此页信息全为必填项</p>
-     <section class="personage-col-2 top" ui-sref="app.personEntry3" ng-click="addCourse()">
-       <p style="text-align: center;color:#F50208">下一页</p>
+     <section class="personage-col-2 top" ng-click="checkInfo()">
+       <p style="text-align: center;color:#538FFD">下一页</p>
      </section>
    </article>
   </ion-content>

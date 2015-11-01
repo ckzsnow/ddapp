@@ -1,19 +1,21 @@
 <ion-view>
   <div class="bar bar-header bar-positive">
-    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
+    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
     <h1 class="title">个人中心</h1>
-    <a class="button button-icon icon ion-android-settings" ui-sref="app.setting"></a>
+    <a class="button button-icon icon ion-android-settings" ng-click="setting()"></a>
   </div>
   <ion-content class="has-header has-tabs contain">
    <article>
-     <section class="personage-col-1" ui-sref="app.myinfo">
-       <img src="img/person.jpg" alt=""/>
-       <p>{{userComm.userName||"暂无"}}</p>
+     <section class="personage-col-1" ui-sref="{{uiSref}}">
+       	 <img ng-show="!hasLogin" src="img/person.png" alt=""/>
+	       <img ng-show="hasLogin" ng-src="http://139.196.23.131:7070/ddcb{{userComm.userPhoto}}" alt=""/>
+	       <p ng-show="!hasLogin">登陆/注册</p>
+	       <p ng-show="hasLogin">{{userComm.userName || "未设置"}}</p>
        <div>
          <a class="button button-icon icon ion-ios-arrow-right" style="margin-top: 15px"></a>
        </div>
      </section>
-     <section class="personage-col-2 top" ui-sref="app.myorder">
+     <section class="personage-col-2 top" ng-click="myOpenCourseOrder()">
        <a class="icon ion-android-contact"></a>
        <p>我的公开课订单</p>
        <div>
@@ -21,14 +23,14 @@
        </div>
      </section>
      <div class="personage-col-3 top">
-       <section class="personage-col-2" ui-sref="app.personEntry">
+       <section class="personage-col-2"  ng-click="applyCourse()">
          <a class="icon ion-ios-star"></a>
          <p>申请公开课</p>
          <div>
            <a class="button button-icon icon ion-ios-arrow-right" style="margin-top: -2px"></a>
          </div>
        </section>
-       <section class="personage-col-2" ui-sref="app.myopen">
+       <section class="personage-col-2"  ng-click="myTeachCourse()">
          <a class="icon ion-ios-star"></a>
          <p>我开设的公开课</p>
          <div>

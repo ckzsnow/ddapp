@@ -1,64 +1,55 @@
 <ion-view>
   <div class="bar bar-header bar-positive">
-    <!--<a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>-->
+    <a class="button button-icon icon ion-ios-arrow-left" ng-click="$ionicGoBack()"></a>
     <h1 class="title">发现</h1>
-    <!--<a class="button button-icon icon ion-navicon"></a>-->
   </div>
-  <ion-content class="has-header has-tabs">
-    <div class="home-title">
-      <span ui-sref="app.find">行业大类</span>
+  <ion-content class="has-header has-tabs" style="background-color: #EBEBEB;">
+    <div class="home-title" style="background-color: white;font-size:15px;">
+      <span >行业大类</span>
       <span class="active">行业细分</span>
     </div>
-    <div class="top">
-      <div style="margin: auto;width: 320px;">
-        <div class="industry-col" ng-click="openModal()">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title" ng-show="!testChooseArr.length">咨询</p>
-          <div class="choose-detail" ng-show="testChooseArr.length">
-                <p style="">咨询</p>
-                <!--<i class="button-icon icon ion-checkmark-round"></i>-->
-                <li ng-repeat="i in testChooseArr">{{i}}</li>
+    <div style="height:15px;width:100%;"></div>
+    <div ng-repeat="(key, val) in selectedCategoryInfo">
+    <div style="background-color: white;">
+      <div style="margin: auto;width: 100%;padding-left:10px;padding-top:10px;padding-bottom:10px;">
+      	<div style="margin-bottom: 5px;">
+      		<p style="font-size:10px;">{{allIndustry[key - 1].name}}</p>
+      	</div>
+      	<hr/>
+        <div class="industry-col" ng-repeat="field in allField[key]" ng-click="openModal(key, {{field.id}})">
+          <img ng-src="{{field.icon}}"/>
+          <div class="choose-detail" ng-show="selectedStageInfo[field.id].name.length">
+                <p style="">{{field.name}}</p>
+                <li ng-repeat="name in selectedStageInfo[field.id].name">{{name}}</li>
           </div>
         </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">财务</p>
-        </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">知识</p>
-        </div>
-        <div class="industry-col">
-          <div class="mask"></div>
-          <img src="img/person.jpg" alt=""/>
-          <p class="title">游戏</p>
-        </div>
       </div>
-      <p>提示：点击第一个看效果</p>
     </div>
-    <section class="personage-col-2 top" ng-click="seachCourse()">
-      <p style="text-align: center;color:#F50208">下一页</p>
-    </section>
+    <div style="height:15px;width:100%;"></div>
+    </div>
+    <div style="width:100%;background-color: white;margin-bottom:30px;" ng-click="searchCourse()">
+      <p style="padding-top:15px;padding-bottom:15px;text-align: center;color:#548DFE">确认</p>
+    </div>
   </ion-content>
 </ion-view>
 <script id="find-detail.html" type="text/ng-template">
   <div class="modal">
     <ion-header-bar>
-      <h1 class="title">请选择行业</h1>
+      <h1 class="title" style="text-align: center;">课程方向</h1>
     </ion-header-bar>
     <ion-content>
       <div class="list">
-        <ion-checkbox ng-repeat="item in testdata"
-                      ng-model="item.checked"
-                      ng-checked="item.checked">
-          {{ item.text }}
+        <ion-checkbox ng-repeat="(key, val) in stageInfo"
+                      ng-model="val.checked"
+                      ng-checked="val.checked">
+          {{ val.text }}
         </ion-checkbox>
+        <div style="width:100%;margin-bottom:30px;">
+      		<p style="padding-top:15px;padding-bottom:15px;padding-left:15px;font-size:10px;color:#7A7A7A">提示：此处为多选项，最多可选三个。</p>
+    		</div>
+        <button class="button button-full button-positive" ng-click="selectStage()">确定</button>
+      	<button class="button button-full button-positive" ng-click="closeModal()">取消</button>
       </div>
-      <button class="button button-full button-energized" ng-click="changeCustomerInfo()">确定</button>
-      <button class="button button-full button-energized" ng-click="closeModal()">取消</button>
     </ion-content>
   </div>
 </script>

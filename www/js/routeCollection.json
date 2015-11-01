@@ -22,7 +22,8 @@
     "url": "/setting",
     "views": {
       "menuContent": {
-        "templateUrl": "static/person/setting.html"
+        "templateUrl": "static/person/setting.html",
+        "controller": "logoutCtrl"
       }
     }
   },
@@ -30,7 +31,8 @@
     "url": "/setphone",
     "views": {
       "menuContent": {
-        "templateUrl": "static/person/setphone.html"
+        "templateUrl": "static/person/setphone.html",
+        "controller":"setPhoneCtrl"
       }
     }
   },
@@ -66,7 +68,7 @@
     "views": {
       "menuContent": {
         "templateUrl": "static/person/personentry-3.html",
-        "controller":"resumeCtrl"
+        "controller":"addCourseFinalCtrl"
       }
     }
   },
@@ -74,7 +76,17 @@
     "url": "/myorder",
     "views": {
       "menuContent": {
-        "templateUrl": "static/person/myorder.html"
+        "templateUrl": "static/person/myorder.html",
+        "controller":"myOrderCtrl"
+      }
+    }
+  },
+  "app.myorder_finish": {
+    "url": "/myorder_finish",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myorder_finish.html",
+        "controller":"myOrderFinishCtrl"
       }
     }
   },
@@ -82,7 +94,17 @@
     "url": "/myopen",
     "views": {
       "menuContent": {
-        "templateUrl": "static/person/myopen.html"
+        "templateUrl": "static/person/myopen.html",
+        "controller":"myOpenCtrl"
+      }
+    }
+  },
+  "app.myopen_latest": {
+    "url": "/myopen_latest",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/myopen_latest.html",
+        "controller":"myOpenLatestCtrl"
       }
     }
   },
@@ -90,7 +112,8 @@
     "url": "/comquestion",
     "views": {
       "menuContent": {
-        "templateUrl": "static/person/comquestion.html"
+        "templateUrl": "static/person/comquestion.html",
+        "controller":"comquestionCtrl"
       }
     }
   },

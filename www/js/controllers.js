@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
   .controller('AppCtrl', function ($scope, itzhao, $LocalStorage, $rootScope) {
-
+		$rootScope.hasLogin = false;
   })
   /*
    首页---homeCtrl
@@ -16,6 +16,13 @@ angular.module('starter.controllers', [])
     	$course.getMoreChosenCourse($scope, 'scroll');
     }
     $scope.refreshChosenCourse();
+    $scope.clickRecommend = function() {
+    	if(!$rootScope.hasLogin) {
+    		itzhao.alertTip("您还没有登陆，无法查看推荐课程信息！");
+    	} else {
+    		$rootScope.$state.go('app.home_recommend');
+    	}
+    }
   })
   .controller('homeLatestCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
     $ionicSlideBoxDelegate.update();
@@ -28,19 +35,19 @@ angular.module('starter.controllers', [])
     	$course.getMoreLatestCourse($scope, 'scroll');
     }
     $scope.refreshLatestCourse();
+    $scope.clickRecommend = function() {
+    	if(!$rootScope.hasLogin) {
+    		itzhao.alertTip("您还没有登陆，无法查看推荐课程信息！");
+    	} else {
+    		$rootScope.$state.go('app.home_recommend');
+    	}
+    }
   })
   .controller('homeRecommendCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
     $ionicSlideBoxDelegate.update();
     $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
-    $scope.hasLogin = false;
-    if(itzhao.check.isEmpty(itzhao.userInfo.userId)) {
-    	itzhao.alertTip("您还没有登陆，无法获取推荐课程信息！");
-    } else {
-    	$scope.hasLogin = true;
-    	$scope.refreshRecommendCourse();
-    }
     $scope.refreshRecommendCourse = function() {
-    	if($scope.hasLogin) {
+    	if($rootScope.hasLogin) {
 	    	$rootScope.pageRecommend = 1;
 	    	$course.getMoreRecommendCourse($scope, 'refresh');
     	} else {
@@ -51,6 +58,7 @@ angular.module('starter.controllers', [])
     $scope.loadMoreRecommendCourse = function () {
     	if($scope.hasLogin) $course.getMoreRecommendCourse($scope, 'scroll');
     }
+    $scope.refreshRecommendCourse();
   })
   .controller('loginCtrl', function ($rootScope, $scope, itzhao, $LocalStorage) {
     $scope.loginData = {};
@@ -58,17 +66,17 @@ angular.module('starter.controllers', [])
       if (itzhao.check.isEmpty($scope.loginData.userId) || itzhao.check.isEmpty($scope.loginData.userPwd)) {
         itzhao.alertTip("用户名或密码不能为空");
       } else {
-        itzhao.JQ("post", "/safety/userLogin",$scope.loginData, function(data) {
+        itzhao.JQ("post", "/safety/userLogin",$scope.loginData, "show", function(data) {
           if (data.errorCode == "0000") {
             var userdata = {};
             userdata.userId = $scope.loginData.userId;
             userdata.userPwd = $scope.loginData.userPwd;
             $LocalStorage.setObject("andy-userInfo", userdata);
-
             itzhao.alertTip("登录成功！", function () {
               itzhao.userInfo.userId = $scope.loginData.userId;
               itzhao.userInfo.setUserInfo(itzhao, $rootScope);
-              $rootScope.$state.go('app.home');
+              $rootScope.hasLogin = true;
+              $rootScope.$state.go('app.home_chosen');
             })
           } else {
             itzhao.alertTip(data.errorMsg);
@@ -109,6 +117,17 @@ angular.module('starter.controllers', [])
         })
       }
     }
+  })
+  .controller("comquestionCtrl", function ($scope) {
+		$scope.question1 = false;
+		$scope.question2 = false;
+		$scope.clickButton = function(id) {
+			if(id == "question1") {
+				$scope.question1 = !$scope.question1;
+			} else if(id == "question2") {
+				$scope.question2 = !$scope.question2;
+			}
+		}
   })
   .controller("bannerCtrl", function ($scope) {
 
