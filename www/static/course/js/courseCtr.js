@@ -19,7 +19,8 @@ angular.module('course.controllers', [])
     $scope.scrollTalkToBottom=function(){
       $ionicScrollDelegate.$getByHandle('talk').scrollBottom();
     }
-    var socket = new WebSocket('ws://139.196.23.131:7070/ddcb/websocket?courseId=' + $rootScope.courseInfoEntrycourseId + '&userId=' + itzhao.userInfo.userId);
+    //new WebSocket('ws://139.196.23.131:7070/ddcb/websocket?courseId=' + $rootScope.courseInfoEntrycourseId + '&userId=' + itzhao.userInfo.userId);
+    var socket = new WebSocket('ws://127.0.0.1:8080/ddcb/websocket?courseId=' + $rootScope.courseInfoEntrycourseId + '&userId=' + itzhao.userInfo.userId);
     socket.onopen = function(event) {
       // 发送一个初始化消息
       //socket.send('I am the client and I\'m listening!');
@@ -47,6 +48,7 @@ angular.module('course.controllers', [])
 	      var photo = itzhao.check.isEmpty($rootScope.userComm.userPhoto) ? "img/person.png" : "http://139.196.23.131:7070/ddcb/" + $rootScope.userComm.userPhoto;
 	      var str="<div class='talk-col'><div class='talk-left'><img src='img/right.png'/> <p>"+$scope.sendData+"</p></div><img src='"+photo+"'/></div>";
 	      $("div[compent='talk-unit']").append(str);
+	      $scope.sendData = "";
       }
     }
   })

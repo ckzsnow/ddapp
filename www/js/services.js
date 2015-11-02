@@ -156,7 +156,7 @@ angular.module('starter.services', [])
         setUserInfo:function(itzhao,$rootScope){
           //$rootScope.userComm={"userId":"111","userName":"1","userPhoto":"1","userSex":0,"industryId":1,"industryName":"金融","companyName":"2","companyPosition":"3","workYearId":1,"workYear":"1年","provinceId":"100100","provinceName":"未知","cityId":"100101","cityName":"未知","areaId":"100102","areaName":"未知","resume":"11","createTime":1444376372000};
           //itzhao.userInfo.otherInfo={"userId":"111","userName":"1","userPhoto":"1","userSex":0,"industryId":1,"industryName":"金融","companyName":"2","companyPosition":"3","workYearId":1,"workYear":"1年","provinceId":"100100","provinceName":"未知","cityId":"100101","cityName":"未知","areaId":"100102","areaName":"未知","resume":"11","createTime":1444376372000};
-          itzhao.JQ("get","/userProfile/getUserProfile?userId="+itzhao.userInfo.userId,{},null,function(data){
+          itzhao.JQ("get","/userProfile/getUserProfile?userId="+itzhao.userInfo.userId,{},"show",function(data){
             if(data.result){
               itzhao.userInfo.otherInfo=data.result;
               $rootScope.userComm=data.result;
