@@ -82,11 +82,15 @@ angular.module('find.controllers', [])
 			}
 		}
 		$scope.searchCourse = function () {
-			$rootScope.$state.transitionTo('app.home_recommend', {}, {
-			    reload: true,
-			    inherit: false,
-			    notify: true
-			});
+			if(!$rootScope.hasLogin) {
+				itzhao.alertTip("您还没有登陆，请先登陆！");
+			} else {
+				$rootScope.$state.transitionTo('app.home_recommend', {}, {
+				    reload: true,
+				    inherit: false,
+				    notify: true
+				});
+			}
 		}
 	})
 	.controller("findCtrl", function($scope, itzhao, $rootScope, $LocalStorage, statement) {
