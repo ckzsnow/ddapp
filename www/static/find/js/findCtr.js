@@ -82,7 +82,11 @@ angular.module('find.controllers', [])
 			}
 		}
 		$scope.searchCourse = function () {
-			$rootScope.$state.go('app.home_chosen');
+			$rootScope.$state.transitionTo('app.home_recommend', {}, {
+			    reload: true,
+			    inherit: false,
+			    notify: true
+			});
 		}
 	})
 	.controller("findCtrl", function($scope, itzhao, $rootScope, $LocalStorage, statement) {

@@ -5,7 +5,6 @@ angular.module('person.controllers', ["ionic-timepicker", "ionic-datepicker"])
   .controller("personAgeCtrl",function($scope,itzhao,$rootScope){
   	if($rootScope.hasLogin) {
   		$scope.uiSref = "app.myinfo";
-  		$scope.hasLogin = true;
   	} else {
   		$scope.uiSref = "app.login";
   	}
@@ -325,8 +324,10 @@ angular.module('person.controllers', ["ionic-timepicker", "ionic-datepicker"])
     	$course.getMyOrderCourse($scope, 'scroll');
     }
     $scope.refreshMyOrderCourse();
-    $scope.enterCourse = function() {
-    	alert("正在进入");
+    $scope.enterCourse = function(index) {
+    	$rootScope.courseInfoEntry = $rootScope.myOrderCourse[index];
+    	$rootScope.courseInfoEntrycourseId = $rootScope.courseInfoEntry.courseInfo.id;
+    	$rootScope.$state.go('app.coursePro');
     }
   })
   .controller('myOrderFinishCtrl', function ($rootScope, $scope, itzhao, $ionicScrollDelegate, $LocalStorage,$course) {
@@ -348,8 +349,10 @@ angular.module('person.controllers', ["ionic-timepicker", "ionic-datepicker"])
     	$course.getMyOpenCourse($scope, 'scroll');
     }
     $scope.refreshMyOpenCourse();
-    $scope.enterCourse = function() {
-    	alert("正在进入");
+    $scope.enterCourse = function(index) {
+    	$rootScope.courseInfoEntry = $rootScope.myOpenCourse[index];
+    	$rootScope.courseInfoEntrycourseId = $rootScope.courseInfoEntry.courseInfo.id;
+    	$rootScope.$state.go('app.coursePro');
     }
   })
   .controller('myOpenLatestCtrl', function ($rootScope, $scope, itzhao, $ionicScrollDelegate, $LocalStorage,$course) {

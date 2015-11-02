@@ -5,8 +5,8 @@
   </div>
   <ion-content class="has-header has-tabs contain">
     <div class="home-title" style="font-size:15px;">
-      <span ui-sref="app.home_chosen">精选</span>
-      <span ui-sref="app.home_latest">最新</span>
+      <span ng-click="clickChosen()">精选</span>
+      <span ng-click="clickLatest()">最新</span>
       <span class="active">推荐</span>
     </div>
     <div class="slide">
@@ -30,7 +30,7 @@
     <div class="list">
     	<div ng-show="initRecommendData && hasLogin" style="text-align: center;"><ion-spinner></ion-spinner></div>
     	<div ng-show="!initRecommendData && !recommendCourse.length"><p style="text-align:center;padding-top:15px;padding-bottom:15px;padding-left:15px;font-size:10px;color:#7A7A7A">没有获取到课程信息，您可以在发现中设置后重试。</p></div>
-      <div class="item" ng-repeat="col in recommendCourse" ng-click="clickCourse({{col.courseInfo.id}})">
+      <div class="item" ng-repeat="col in recommendCourse" ng-click="clickCourse({{$index}})">
         <div class="home-col-1">
           <h3>{{col.courseInfo.name}}</h3>
         </div>

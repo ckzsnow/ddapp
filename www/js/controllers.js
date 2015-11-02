@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
   .controller('AppCtrl', function ($scope, itzhao, $LocalStorage, $rootScope) {
-		$rootScope.hasLogin = false;
+		//$rootScope.hasLogin = false;
   })
   /*
    首页---homeCtrl
@@ -10,6 +10,7 @@ angular.module('starter.controllers', [])
     $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     $scope.refreshChosenCourse = function() {
     	$rootScope.pageChosen = 1;
+    	$rootScope.chosenCourse = new Array();
     	$course.getMoreChosenCourse($scope, 'refresh');
     }
     $scope.loadMoreChosenCourse = function () {
@@ -20,8 +21,19 @@ angular.module('starter.controllers', [])
     	if(!$rootScope.hasLogin) {
     		itzhao.alertTip("您还没有登陆，无法查看推荐课程信息！");
     	} else {
-    		$rootScope.$state.go('app.home_recommend');
+    		$rootScope.$state.transitionTo('app.home_recommend', {}, {
+			    reload: true,
+			    inherit: false,
+			    notify: true
+				});
     	}
+    }
+    $scope.clickLatest = function() {
+    	$rootScope.$state.transitionTo('app.home_latest', {}, {
+		    reload: true,
+		    inherit: false,
+		    notify: true
+			});
     }
     $scope.clickCourse = function(index) {
     	$rootScope.courseInfoEntry = $rootScope.chosenCourse[index];
@@ -38,6 +50,7 @@ angular.module('starter.controllers', [])
     $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
     $scope.refreshLatestCourse = function() {
     	$rootScope.pageLatest = 1;
+    	$rootScope.latestCourse = new Array();
     	$course.getMoreLatestCourse($scope, 'refresh');
     }
     $scope.loadMoreLatestCourse = function () {
@@ -48,7 +61,27 @@ angular.module('starter.controllers', [])
     	if(!$rootScope.hasLogin) {
     		itzhao.alertTip("您还没有登陆，无法查看推荐课程信息！");
     	} else {
-    		$rootScope.$state.go('app.home_recommend');
+    		$rootScope.$state.transitionTo('app.home_recommend', {}, {
+			    reload: true,
+			    inherit: false,
+			    notify: true
+				});
+    	}
+    }
+    $scope.clickChosen = function() {
+    	$rootScope.$state.transitionTo('app.home_chosen', {}, {
+		    reload: true,
+		    inherit: false,
+		    notify: true
+			});
+    }
+    $scope.clickCourse = function(index) {
+    	$rootScope.courseInfoEntry = $rootScope.latestCourse[index];
+    	$rootScope.courseInfoEntrycourseId = $rootScope.courseInfoEntry.courseInfo.id;
+    	if(!$rootScope.hasLogin || itzhao.check.isEmpty($rootScope.latestCourse[index].courseInfo.isEnter) || !$rootScope.latestCourse[index].courseInfo.isEnter) {
+    		$rootScope.$state.go('app.courseInfo');
+    	} else {
+    		$rootScope.$state.go('app.coursePro');
     	}
     }
   })
@@ -58,6 +91,7 @@ angular.module('starter.controllers', [])
     $scope.refreshRecommendCourse = function() {
     	if($rootScope.hasLogin) {
 	    	$rootScope.pageRecommend = 1;
+	    	$rootScope.recommendCourse = new Array();
 	    	$course.getMoreRecommendCourse($scope, 'refresh');
     	} else {
     		$scope.$broadcast('scroll.refreshComplete');
@@ -68,6 +102,29 @@ angular.module('starter.controllers', [])
     	if($scope.hasLogin) $course.getMoreRecommendCourse($scope, 'scroll');
     }
     $scope.refreshRecommendCourse();
+    $scope.clickChosen = function() {
+    	$rootScope.$state.transitionTo('app.home_chosen', {}, {
+		    reload: true,
+		    inherit: false,
+		    notify: true
+			});
+    }
+    $scope.clickLatest = function() {
+    	$rootScope.$state.transitionTo('app.home_latest', {}, {
+		    reload: true,
+		    inherit: false,
+		    notify: true
+			});
+    }
+    $scope.clickCourse = function(index) {
+    	$rootScope.courseInfoEntry = $rootScope.recommendCourse[index];
+    	$rootScope.courseInfoEntrycourseId = $rootScope.courseInfoEntry.courseInfo.id;
+    	if(!$rootScope.hasLogin || itzhao.check.isEmpty($rootScope.recommendCourse[index].courseInfo.isEnter) || !$rootScope.recommendCourse[index].courseInfo.isEnter) {
+    		$rootScope.$state.go('app.courseInfo');
+    	} else {
+    		$rootScope.$state.go('app.coursePro');
+    	}
+    }
   })
   .controller('loginCtrl', function ($rootScope, $scope, itzhao, $LocalStorage) {
     $scope.loginData = {};
@@ -85,7 +142,11 @@ angular.module('starter.controllers', [])
               itzhao.userInfo.userId = $scope.loginData.userId;
               itzhao.userInfo.setUserInfo(itzhao, $rootScope);
               $rootScope.hasLogin = true;
-              $rootScope.$state.go('app.home_chosen');
+              $rootScope.$state.transitionTo('app.home_chosen', {}, {
+							    reload: true,
+							    inherit: false,
+							    notify: true
+							});
             })
           } else {
             itzhao.alertTip(data.errorMsg);
