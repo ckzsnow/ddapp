@@ -87,7 +87,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
             views: {
               'menuContent': {
                 templateUrl: "static/course/courseproduce.html",
-                controller: 'courseInfoCtrl'
+                controller: 'courseProduceCtrl'
               }
             }
           });

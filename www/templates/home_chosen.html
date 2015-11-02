@@ -30,12 +30,12 @@
     <div class="list">
     	<div ng-show="initChosenData" style="text-align: center;"><ion-spinner></ion-spinner></div>
     	<div ng-show="!initChosenData && !chosenCourse.length"><p style="text-align:center;padding-top:15px;padding-bottom:15px;padding-left:15px;font-size:10px;color:#7A7A7A">没有获取到课程信息，您可以在发现中设置后重试。</p></div>
-      <div class="item" ng-repeat="col in chosenCourse" ng-click="clickCourse({{col.courseInfo.id}})">
+      <div class="item" ng-repeat="col in chosenCourse" ng-click="clickCourse({{$index}})">
         <div class="home-col-1">
           <h3>{{col.courseInfo.name}}</h3>
         </div>
         <div class="home-col-2">
-          <span>{{col.courseInfo.industryName}}/{{col.courseInfo.fieldName}}/{{col.courseInfo.stageName}}/</span>
+          <span>{{col.courseInfo.industryName}}/{{col.courseInfo.fieldName}}/{{col.courseInfo.stageName}}</span>
         </div>
         <div class="home-col-3">
           <p>{{col.courseInfo.brief}}</p>

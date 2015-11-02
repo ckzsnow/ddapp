@@ -45,6 +45,15 @@
       }
     }
   },
+  "app.setNewPWD": {
+    "url": "/setnewpwd",
+    "views": {
+      "menuContent": {
+        "templateUrl": "static/person/setnewpwd.html",
+        "controller":"setNewPwdCtrl"
+      }
+    }
+  },
   "app.personEntry": {
     "url": "/personentry",
     "views": {

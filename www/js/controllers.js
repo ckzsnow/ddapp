@@ -23,6 +23,15 @@ angular.module('starter.controllers', [])
     		$rootScope.$state.go('app.home_recommend');
     	}
     }
+    $scope.clickCourse = function(index) {
+    	$rootScope.courseInfoEntry = $rootScope.chosenCourse[index];
+    	$rootScope.courseInfoEntrycourseId = $rootScope.courseInfoEntry.courseInfo.id;
+    	if(!$rootScope.hasLogin || itzhao.check.isEmpty($rootScope.chosenCourse[index].courseInfo.isEnter) || !$rootScope.chosenCourse[index].courseInfo.isEnter) {
+    		$rootScope.$state.go('app.courseInfo');
+    	} else {
+    		$rootScope.$state.go('app.coursePro');
+    	}
+    }
   })
   .controller('homeLatestCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $ionicScrollDelegate, $LocalStorage,$course) {
     $ionicSlideBoxDelegate.update();

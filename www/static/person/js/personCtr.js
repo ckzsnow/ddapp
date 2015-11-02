@@ -88,6 +88,36 @@ angular.module('person.controllers', ["ionic-timepicker", "ionic-datepicker"])
         }
       }
   })
+  .controller("setNewPwdCtrl",function($scope,itzhao,$rootScope){
+      $scope.pwdSetData={};
+      $scope.resetPwd=function(){
+        if(itzhao.check.isEmpty($scope.pwdSetData.userId)||itzhao.check.isEmpty($scope.pwdSetData.userVerifyCode)||itzhao.check.isEmpty($scope.pwdSetData.userPwd)){
+          itzhao.alertTip("输入项不能为空!");
+        } else {
+          itzhao.JQ("post","/safety/resetPwd",$scope.pwdSetData, "show", function(data){
+          	if(data.errorCode=="0000") {
+          		itzhao.alertTip("密码修改成功！");
+          		$rootScope.$state.go('app.login');
+          	}else{
+            	itzhao.alertTip(data.errorMsg);
+          	}
+          })
+        }
+      }
+      $scope.getUpCode=function(){
+	      if(itzhao.check.isEmpty($scope.pwdSetData.userId)){
+	        itzhao.alertTip("请输入手机号!");
+	      }else {
+	        itzhao.JQ("post","/safety/sendVerifyCode",$scope.pwdSetData,"show",function(data){
+	          if(data.errorCode=="0000") {
+	            itzhao.alertTip("验证码发送成功！");
+	          }else{
+	            itzhao.alertTip(data.errorMsg);
+	          }
+	        })
+	      }
+      }
+  })
   .controller("setPhoneCtrl",function($scope,itzhao, $rootScope){
     $scope.phoneSetData={};
     $scope.getUpCode=function(){
@@ -145,6 +175,25 @@ angular.module('person.controllers', ["ionic-timepicker", "ionic-datepicker"])
         itzhao.userInfo.setUserInfo(itzhao,$rootScope);
         //调用名片上传接口了
       })
+    }
+    $scope.checkInfo = function() {
+    	if(itzhao.check.isEmpty($scope.userInfoUp.name)) {
+    		itzhao.alertTip("姓名不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.industry_id)){
+    		itzhao.alertTip("行业不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.sex)){
+    		itzhao.alertTip("性别不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.company)){
+    		itzhao.alertTip("任职机构不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.position)){
+    		itzhao.alertTip("职位不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.work_year_id)){
+    		itzhao.alertTip("工作年限不能为空！");
+    	} else if(itzhao.check.isEmpty($scope.userInfoUp.province_id)){
+    		itzhao.alertTip("所在城市不能为空！");
+    	} else {
+    		$rootScope.$state.go('app.personEntry2');
+    	}
     }
   })
   .controller("addCourseCtrl",function($scope,itzhao, statement, $rootScope, $filter,$LocalStorage){

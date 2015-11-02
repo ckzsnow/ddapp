@@ -2,52 +2,34 @@
  * Created by itzhaocn on 2015/10/19.
  */
 angular.module('course.controllers', [])
-  .controller('courseLastCtrl', function ($rootScope, $scope, itzhao, $ionicSlideBoxDelegate, $LocalStorage,$course) {
-    $ionicSlideBoxDelegate.update();
-    $ionicSlideBoxDelegate.$getByHandle('image-viewer').update();
-    $scope.loadMore = function () {
-      if($rootScope.MoreDataloading2){
-        $course.getMoreCarefullyChosenCourse();
-      }else{
-        $scope.noMoreDataloading=!$rootScope.MoreDataloading2
-      };
-      $scope.$broadcast('scroll.infiniteScrollComplete');
-    };
+  .controller("courseInfoCtrl",function($scope,itzhao,$rootScope){
+	$scope.enterCourse = function(courseId) {
+		if(!$rootScope.hasLogin) {
+    		itzhao.alertTip("您还没有登陆，请先登录！");
+    	} else {
+    		alert("报名！")
+		}
+	}
   })
-  .controller("courseProCtrl",function($scope){
-
-  })
-  .controller("courseInfoCtrl",function($scope,$ionicScrollDelegate,$ionicSlideBoxDelegate,itzhao){
+  .controller("courseProduceCtrl",function($scope,$ionicScrollDelegate,$ionicSlideBoxDelegate,itzhao,$rootScope){
+    $ionicScrollDelegate.$getByHandle('talk').scrollBottom();
     $scope.scrollTalkToTop=function(){
       $ionicScrollDelegate.$getByHandle('talk').scrollTop();
     }
-    $scope.nextSlide = function() {
-      $ionicSlideBoxDelegate.$getByHandle('image-course').next();
-    };
-    $scope.preSlide = function() {
-      $ionicSlideBoxDelegate.$getByHandle('image-course').previous();
-    };
-    $scope.slideHasChanged=function($index){
-      getIndex();
+    $scope.scrollTalkToBottom=function(){
+      $ionicScrollDelegate.$getByHandle('talk').scrollBottom();
     }
-    $scope.currentIndex=1;
-    function getIndex(){
-      //$scope.currentIndex=$ionicSlideBoxDelegate.$getByHandle('image-course').currentIndex();
-      $scope.currentIndex=$ionicSlideBoxDelegate.$getByHandle('image-course').currentIndex()+1;
-      alert($scope.currentIndex)
-    }
-
-    // 创建一个Socket实例
-    var socket = new WebSocket('ws://139.196.23.131:7070/ddcb/websocket?courseId=2&userId=333&userName=weizhao&userPhoto=/views/p2.jpg');
-
-// 打开Socket
+    var socket = new WebSocket('ws://139.196.23.131:7070/ddcb/websocket?courseId=' + $rootScope.courseInfoEntrycourseId + '&userId=' + itzhao.userInfo.userId);
     socket.onopen = function(event) {
       // 发送一个初始化消息
       //socket.send('I am the client and I\'m listening!');
-      console.log("begin socket!")
+      //console.log("begin socket!")
       // 监听消息
       socket.onmessage = function(event) {
-        console.log('Client received a message',event);
+        //console.log('Client received a message',event);
+        var photo = itzhao.check.isEmpty(event.data.userPhoto) ? "img/persion.png" : "http://139.196.23.131:7070/ddcb/" + event.data.userPhoto;
+	    var str="<div class='talk-col'><div class='talk-left'><img src='img/right.png'/> <p>"+$scope.sendData+"</p></div><img src='"+photo+"'/></div>";
+	    $("div[compent='talk-unit']").append(str);
       };
 
       // 监听Socket的关闭
@@ -58,11 +40,13 @@ angular.module('course.controllers', [])
       //socket.close()
     };
     $scope.sendMessage=function(){
-      var str="<div class='talk-col'><div class='talk-left'><img src='img/right.png'/> <p>"+$scope.sendData+"</p></div><img src='img/person.jpg'/></div>";
-      $("div[compent='talk-unit']").prepend(str);
-      //if(!itzhao.check.isEmpty($scope.sendData)){
-      //  alert($scope.sendData);
-      //  socket.send($scope.sendData);
-      //}
+      if(itzhao.check.isEmpty($scope.sendData)) {
+      	itzhao.alertTip("不能发送空信息！");
+      } else {
+	      $ionicScrollDelegate.$getByHandle('talk').scrollBottom();
+	      var photo = itzhao.check.isEmpty($rootScope.userComm.userPhoto) ? "img/person.png" : "http://139.196.23.131:7070/ddcb/" + $rootScope.userComm.userPhoto;
+	      var str="<div class='talk-col'><div class='talk-left'><img src='img/right.png'/> <p>"+$scope.sendData+"</p></div><img src='"+photo+"'/></div>";
+	      $("div[compent='talk-unit']").append(str);
+      }
     }
   })
