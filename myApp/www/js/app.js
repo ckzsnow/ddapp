@@ -7,8 +7,8 @@
 angular.module('starter', ['ionic','starter.controllers','starter.services','Routing','course.controllers','person.controllers',"find.controllers"])
     .constant('ApiEndpoint', {
         //url: 'http://182.92.73.68:3000'
-        //url: 'http://139.196.23.131:7070/ddcb/'
-        url: 'http://127.0.0.7:8080/ddcb/'
+        url: 'http://139.196.23.131:7070/ddcb/'
+        //url: 'http://127.0.0.7:8080/ddcb/'
         //url: 'https://139.196.23.131:8443/ddcb'
     })
     .run(function ($ionicPlatform,$rootScope,$state) {
@@ -39,6 +39,11 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
         $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
         $ionicConfigProvider.platform.android.navBar.alignTitle('left');
         $stateProvider
+        	.state('tutorial', {
+		        url: '/',
+		        templateUrl: 'templates/tutorial.html',
+		        controller: 'TutorialCtrl'
+		     })
             .state('app', {
                 url: "/app",
                 //abstract: true,
@@ -92,7 +97,7 @@ angular.module('starter', ['ionic','starter.controllers','starter.services','Rou
             }
           });
         routerProvider.setCollectionUrl('js/routeCollection.json');
-        $urlRouterProvider.otherwise('/app/home_chosen');
+        $urlRouterProvider.otherwise('/');
     }).controller('MainController', function ($scope, router) {
         $scope.reload = function () {
             router.setUpRoutes();
