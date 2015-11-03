@@ -202,19 +202,18 @@ angular.module('starter.controllers', [])
   .controller("bannerCtrl", function ($scope) {
 
   })
-  .controller('TutorialCtrl', function($scope, $state, $ionicViewService) {
+  .controller('TutorialCtrl', function($scope, $state, $ionicHistory,$rootScope) {
 
   window.localStorage['didTutorial'] = false;// For Test
 
   var startApp = function() {
-    $ionicViewService.clearHistory();
-    // 默认进入“今天”的任务列表
-    $state.go('app.todolist', {groupId: -3});
+    $ionicHistory.clearHistory();
+    $rootScope.$state.go('app.home_chosen');
     window.localStorage['didTutorial'] = true;
   };
 
   if(window.localStorage['didTutorial'] === "true") {
-    console.log('Skip intro');
+    //console.log('Skip intro');
     // 向导页面只显示一次
     startApp();
   } else {
